@@ -1,0 +1,1088 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Title -->
+    <title>Engelsiz Yaşam- Şanlıurfa Büyükşehir Belediyesi</title>
+
+    <!-- Favicon -->
+    <link rel="icon" href="https://www.sanliurfa.bel.tr/assets/img/favicon/favicon.png">
+
+    <!-- Core Stylesheet -->
+    <link rel="stylesheet" href="https://www.sanliurfa.bel.tr/assets/anasayfa/style.css">
+    <link href="https://www.sanliurfa.bel.tr/css/jquery.fancybox.min.css" rel="stylesheet" type="text/css" />
+
+    </head>
+
+<style>
+    .top-logo {
+        display: none;
+    }
+
+    @media (max-width: 991px) {
+        .top-logo {
+            display: block;
+            display: flex;
+            justify-content: center;
+            position: relative;
+            top: 40px;
+        }
+    }
+
+    /* Çerez bildirim çubuğu */
+    #cookieConsent {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        background-color: #333;
+        color: #fff;
+        padding: 15px;
+        text-align: center;
+        z-index: 1000;
+        display: none;
+    }
+
+    #cookieConsent p {
+        display: inline;
+        font-size: 14px;
+        color: #fff;
+        margin-right: 10px;
+    }
+
+    #cookieConsent a {
+        color: #ffd700;
+        text-decoration: underline;
+    }
+
+    #cookieConsent button {
+        background-color: #ffd700;
+        border: none;
+        color: #333;
+        padding: 8px 15px;
+        cursor: pointer;
+        font-size: 14px;
+        border-radius: 5px;
+    }
+
+    #cookieConsent button:hover {
+        background-color: #ffcc00;
+    }
+</style>
+
+<body>
+    <!-- Preloader (istersen açarsın)
+    <div class="preloader d-flex align-items-center justify-content-center">
+        <div class="preloader-circle"></div>
+        <div class="preloader-img">
+            <img src="https://www.sanliurfa.bel.tr/assets/img/logo-dark.png" alt="">
+        </div>
+    </div>
+    -->
+
+    <!-- ##### Header Area Start ##### -->
+    <header class="header-area">
+
+        <!-- ***** Top Header Area ***** -->
+        <div class="top-header-area">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="top-header-content d-flex align-items-center justify-content-between">
+                            <!-- Sol boş bırakılmış -->
+                            <div class="top-header-meta d-flex"></div>
+
+                            <!-- Sağ üst: mail + alo 153 -->
+                            <div class="top-header-meta d-flex">
+                                <div class="login">
+                                    <a href="mailto:bilgi@sanliurfa.bel.tr">
+                                        <i class="fa fa-envelope-o" aria-hidden="true"></i>
+                                        <span>bilgi@sanliurfa.bel.tr</span>
+                                    </a>
+                                </div>
+                                <div class="cart">
+                                    <a href="#"><i class="fa fa-phone" aria-hidden="true"></i>Alo 153</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ***** Navbar Area ***** -->
+        <div class="alazea-main-menu" style="border-bottom: 1px solid rgba(235, 235, 235, 0.4);">
+            <div class="classy-nav-container breakpoint-off">
+                <div class="container">
+                    <!-- Menu -->
+                    <nav class="classy-navbar justify-content-between" id="alazeaNav">
+
+                        <!-- Nav Brand -->
+                        <a href="https://www.sanliurfa.bel.tr" class="nav-brand">
+                            <img src="https://www.sanliurfa.bel.tr/assets/img/logo-dark.png" alt="" style="max-height:70px;">
+                        </a>
+                        <a href="https://www.musicurfa.com.tr/" target="_blank" class="nav-brand">
+                            <img src="https://www.sanliurfa.bel.tr/assets/img/musicurfa.png" alt=""
+                                 style="max-height:50px;border-radius:0.3em;">
+                        </a>
+
+                        <!-- Navbar Toggler -->
+                        <div class="classy-navbar-toggler">
+                            <span class="navbarToggler"><span></span><span></span><span></span></span>
+                        </div>
+
+                        <!-- Menu -->
+                        <div class="classy-menu">
+                            <!-- Close Button -->
+                            <div class="classycloseIcon">
+                                <div class="cross-wrap"><span class="top"></span><span class="bottom"></span></div>
+                            </div>
+
+                            <div class="top-logo">
+                                <a href="https://www.sanliurfa.bel.tr">
+                                    <img src="https://www.sanliurfa.bel.tr/assets/img/logo-dark.png" alt="" style="max-height:70px;">
+                                </a>
+                            </div>
+
+                            <!-- Navbar Start -->
+                            <div class="classynav">
+                                <ul>
+                                    <li><a href="https://www.sanliurfa.bel.tr">ANASAYFA</a></li>
+                                    <li><a href="https://www.sanliurfa.bel.tr/icerik/17628/1/baskan">BAŞKAN</a></li>
+                                    <li>
+                                        <a href="https://www.sanliurfa.bel.tr/kategori/3/0/kurumsal">KURUMSAL</a>
+                                        <ul class="dropdown">
+                                                                                        <li><a href="https://www.sanliurfa.bel.tr/icerik/17947/1/mithat-can-kutluca">Genel Sekreter</a></li>
+                                            <li><a href="https://www.sanliurfa.bel.tr/organizasyon-semasi">Organizasyon Şeması</a></li>
+                                            <li><a href="https://www.sanliurfa.bel.tr/kurumsal-yapi">Kurumsal Yapı</a></li>
+                                            <li><a href="https://www.sanliurfa.bel.tr/meclis-uyeleri">Meclis Üyeleri</a></li>
+                                            <li><a href="https://www.sanliurfa.bel.tr/encumen-uyeleri">Encümen Üyeleri</a></li>
+                                            <li><a href="https://www.sanliurfa.bel.tr/etik-komisyonu">Etik Komisyonu</a></li>
+                                            <li><a href="https://www.sanliurfa.bel.tr/icerik/41/3/kalite-politikalarimiz">Kalite Politikalarımız</a></li>
+                                            <li><a href="https://www.sanliurfa.bel.tr/icerik/18980/17/komisyonlarimiz">Komisyonlarımız</a></li>
+                                            <li><a href="https://www.sanliurfa.bel.tr/kategori/106/3/kurumsal-kimlik">Kurumsal Kimlik</a></li>
+                                            <li><a href="https://www.sanliurfa.bel.tr/kategori/224/3/faaliyet-raporu">Faaliyet Raporu</a></li>
+                                            <li><a href="https://www.sanliurfa.bel.tr/icerik/4182/3/belediye-tarihcesi">Belediye Tarihçesi</a></li>
+                                            <li><a href="https://www.sanliurfa.bel.tr/personel-list/20/eski-baskanlarimiz">Eski Başkanlarımız</a></li>
+                                            <li><a  target="_blank"href="https://www.sanliurfa.bel.tr/uploads/2025/20251211115842-36974-23707.pdf">Yönetmelik</a></li>
+                                        </ul>
+                                    </li>
+
+                                    <li>
+                                        <a href="https://www.sanliurfa.bel.tr/kategori/2/0/sanliurfa">ŞANLIURFA</a>
+                                        <ul class="dropdown">
+                                            <li><a href="https://www.sanliurfa.bel.tr/kategori/45/0/ilceler">İlçeler</a></li>
+                                            <li><a href="https://www.sanliurfa.bel.tr/kategori/90/0/fotograflarla-urfa">Fotoğraflarla Şanlıurfa</a></li>
+                                            <li><a href="https://www.sanliurfa.bel.tr/kategori/631/0/urfa-mutfagi">Şanlıurfa Mutfağı</a></li>
+                                            <li><a href="https://www.sanliurfa.bel.tr/kategori/727/3/urfa-tanitim">Şanlıurfa Tanıtım</a></li>
+                                            <li><a href="https://www.sanliurfa.bel.tr/video-galeri">Video Galeri</a></li>
+                                            <li><a href="https://www.sanliurfa.bel.tr/icerik/1/1/urfa-tarihcesi">Şanlıurfa Tarihi</a></li>
+                                            <li><a href="https://www.sanliurfa.bel.tr/kategori/84/1/yayinlarimiz">Yayınlarımız</a></li>
+                                        </ul>
+                                    </li>
+
+                                    <li><a href="https://www.sanliurfa.bel.tr/iletisim">İLETİŞİM</a></li>
+                                    <li style="background-color: rgba(255, 0, 38, 1); border-radius: 5px;">
+                                        <a href="https://ebelediyem.sanliurfa.bel.tr/anasayfa">E-BELEDİYE</a>
+                                    </li>
+                                    <li>
+                                        <img src="https://www.sanliurfa.bel.tr/assets/img/100.png" style="max-width:90px;">
+                                    </li>
+                                </ul>
+                            </div>
+                            <!-- Navbar End -->
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- ##### Header Area End ##### -->
+
+    
+<link rel="stylesheet" href="https://www.sanliurfa.bel.tr/css/style.css">
+<link rel="stylesheet" href="https://www.sanliurfa.bel.tr/css/style_ek.css">
+
+<link rel="stylesheet" href="https://www.sanliurfa.bel.tr/css/style2.css">
+
+<!--[if lt IE 10]>
+    <div style="background: #212121; padding: 10px 0; box-shadow: 3px 3px 5px 0 rgba(0,0,0,.3); clear: both; text-align:center; position: relative; z-index:1;"><a href="https://windows.microsoft.com/en-US/internet-explorer/"><img src="images/ie8-panel/warning_bar_0000_us.jpg" border="0" height="42" width="820" alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today."></a></div>
+    <script src="js/html5shiv.min.js"></script>
+<![endif]-->
+
+<style>
+
+
+.cell-sm-4{margin-bottom:35px}
+	p{ font-size:15px}
+	
+	.text-center{text-align:center;}
+</style>
+
+<div class="breadcrumb-area">
+        <!-- Top Breadcrumb Area -->
+        <div class="top-breadcrumb-area bg-img bg-overlay d-flex align-items-center justify-content-center" style="background-image: url(https://www.sanliurfa.bel.tr/assets/anasayfa/img/bg-img/241.jpg);">
+            
+        </div>
+
+    </div>
+
+<div class="">
+ 
+
+<div class="" >
+
+<div class="serit">
+<div class="container">
+<div class="page-list">
+
+
+
+<ul>
+<li class=""><a href="https://www.sanliurfa.bel.tr"><i class="fa fa-home" style=""></i> Anasayfa</a></li>
+<li><i class="fa fa-angle-right"></i></li><li><a  href="https://www.sanliurfa.bel.tr/kategori/4/0/hizmetler">Hizmetler</a></li><li><i class="fa fa-angle-right"></i></li><li><a  href="https://www.sanliurfa.bel.tr/kategori/41/0/engelsiz-yasam">Engelsiz Yaşam</a></li>
+</ul>
+
+
+
+</div>
+
+<div class="clearfix"></div>
+</div>
+</div>
+
+</div>
+
+<main class="page-content wow fadeIn bg-lighter">
+ 
+<section class="container section-top-34 section-bottom-34">
+<!----------div class="shell min500" class lar silindi----------->
+<div class="">
+
+
+
+
+<h3 class="text-bold text-center">Engelsiz Yaşam</h3>
+<hr class="divider bg-saffron">
+
+
+<div class="range">
+
+<div class="cell-sm-4"><a  href="https://www.sanliurfa.bel.tr/kategori/339/0/engelliler-koordinasyon-ve-yasam-merkezi"><img src="https://www.sanliurfa.bel.tr/test?w=450&h=272&file=files/kategori/1/Engelli_koordinasyon/thumbs/5a83db61eb1e1.jpg" height="250" alt="" class="lazy img-responsive img-rounded img-thumbnail reveal-inline-block"></a>
+<div class="text-sm-center offset-top-10 text-center">
+<div>
+<h5 class="text-bold "><a  href="https://www.sanliurfa.bel.tr/kategori/339/0/engelliler-koordinasyon-ve-yasam-merkezi">Engelliler Koordinasyon ve Yaşam Merkezi</a></h5>
+</div>
+<div>
+<p ></p>
+<p></p>
+</div>
+</div>
+</div>
+<div class="cell-sm-4"><a  href="https://www.sanliurfa.bel.tr/kategori/343/0/geziler"><img src="https://www.sanliurfa.bel.tr/test?w=450&h=272&file=files/kategori/1/Engelli_koordinasyon/thumbs/5a83e4c6c0de1.jpg" height="250" alt="" class="lazy img-responsive img-rounded img-thumbnail reveal-inline-block"></a>
+<div class="text-sm-center offset-top-10 text-center">
+<div>
+<h5 class="text-bold "><a  href="https://www.sanliurfa.bel.tr/kategori/343/0/geziler">Geziler</a></h5>
+</div>
+<div>
+<p ></p>
+<p></p>
+</div>
+</div>
+</div>
+<div class="cell-sm-4"><a  href="https://www.sanliurfa.bel.tr/kategori/340/0/kurslar"><img src="https://www.sanliurfa.bel.tr/test?w=450&h=272&file=files/kategori/1/Engelli_koordinasyon/thumbs/5a83dd68ca9d2.jpg" height="250" alt="" class="lazy img-responsive img-rounded img-thumbnail reveal-inline-block"></a>
+<div class="text-sm-center offset-top-10 text-center">
+<div>
+<h5 class="text-bold "><a  href="https://www.sanliurfa.bel.tr/kategori/340/0/kurslar">Kurslar</a></h5>
+</div>
+<div>
+<p ></p>
+<p></p>
+</div>
+</div>
+</div>
+<div class="cell-sm-4"><a  href="https://www.sanliurfa.bel.tr/kategori/344/0/psikolojik-danismalik"><img src="https://www.sanliurfa.bel.tr/test?w=450&h=272&file=files/kategori/1/Engelli_koordinasyon/thumbs/5a83e710b3f24.jpg" height="250" alt="" class="lazy img-responsive img-rounded img-thumbnail reveal-inline-block"></a>
+<div class="text-sm-center offset-top-10 text-center">
+<div>
+<h5 class="text-bold "><a  href="https://www.sanliurfa.bel.tr/kategori/344/0/psikolojik-danismalik">Psikolojik Danışmalık</a></h5>
+</div>
+<div>
+<p ></p>
+<p></p>
+</div>
+</div>
+</div>
+<div class="cell-sm-4"><a  href="https://www.sanliurfa.bel.tr/kategori/341/0/spor"><img src="https://www.sanliurfa.bel.tr/test?w=450&h=272&file=photos/1/5894271416b0b.jpg" height="250" alt="" class="lazy img-responsive img-rounded img-thumbnail reveal-inline-block"></a>
+<div class="text-sm-center offset-top-10 text-center">
+<div>
+<h5 class="text-bold "><a  href="https://www.sanliurfa.bel.tr/kategori/341/0/spor">Spor</a></h5>
+</div>
+<div>
+<p ></p>
+<p></p>
+</div>
+</div>
+</div>
+<div class="cell-sm-4"><a  href="https://www.sanliurfa.bel.tr/kategori/345/3/duyurular"><img src="https://www.sanliurfa.bel.tr/test?w=450&h=272&file=files/kategori/1/Engelli_koordinasyon/thumbs/5a83ec7f29c0a.JPG" height="250" alt="" class="lazy img-responsive img-rounded img-thumbnail reveal-inline-block"></a>
+<div class="text-sm-center offset-top-10 text-center">
+<div>
+<h5 class="text-bold "><a  href="https://www.sanliurfa.bel.tr/kategori/345/3/duyurular">Duyurular</a></h5>
+</div>
+<div>
+<p ></p>
+<p></p>
+</div>
+</div>
+</div>
+<div class="cell-sm-4"><a  href="https://www.sanliurfa.bel.tr/kategori/342/0/faaliyetler"><img src="https://www.sanliurfa.bel.tr/test?w=450&h=272&file=files/kategori/1/Engelli_koordinasyon/thumbs/5a83e2c79febd.jpg" height="250" alt="" class="lazy img-responsive img-rounded img-thumbnail reveal-inline-block"></a>
+<div class="text-sm-center offset-top-10 text-center">
+<div>
+<h5 class="text-bold "><a  href="https://www.sanliurfa.bel.tr/kategori/342/0/faaliyetler">Faaliyetler</a></h5>
+</div>
+<div>
+<p ></p>
+<p></p>
+</div>
+</div>
+</div>
+
+
+
+
+
+
+
+
+</div>
+
+</div>
+
+
+
+</div>
+</section>
+ 
+<div class="clearfix"></div>
+ 
+ 
+</main>
+ 
+
+ 
+ 
+</div>
+ 
+<div id="form-output-global" class="snackbars"></div>
+ 
+ 
+<script src="https://www.sanliurfa.bel.tr/js/core.min.js"></script>
+<script src="https://www.sanliurfa.bel.tr/js/script.js"></script>
+<script src="https://www.sanliurfa.bel.tr/js/jquery.lazyload.js"></script>
+<script>
+$(function() {
+    $("img.lazy").lazyload({ effect : "fadeIn"});
+});
+</script>
+
+
+
+    <!-- ##### Footer Area Start ##### -->
+    <footer class="footer-area bg-img">
+        <!-- Main Footer Area -->
+        <div class="main-footer-area">
+            <div class="container">
+                <div class="row">
+
+                    <!-- Logo + Sosyal -->
+                    <div class="col-12 col-sm-6 col-lg-3">
+                        <div class="single-footer-widget">
+                            <div class="footer-logo mb-30">
+                                <a href="https://www.sanliurfa.bel.tr">
+                                    <img src="https://www.sanliurfa.bel.tr/assets/img/logo-dark.png" alt="">
+                                </a>
+                            </div>
+                            <p>Şanlıurfa Büyükşehir Belediyesi<br>Alo 153</p>
+                            <div class="social-info">
+                                <a href="https://www.facebook.com/sanliurfabld" target="_blank">
+                                    <i class="fa fa-facebook" aria-hidden="true" style="margin:0;"></i>
+                                </a>
+                                <a href="https://www.twitter.com/sanliurfabld" target="_blank">
+                                    <i class="fa fa-twitter" aria-hidden="true" style="margin:0;"></i>
+                                </a>
+                                <a href="https://www.instagram.com/sanliurfabld" target="_blank">
+                                    <i class="fa fa-instagram" aria-hidden="true" style="margin:0;"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Linkler -->
+                    <div class="col-12 col-sm-6 col-md-4 col-lg-4">
+                        <div class="single-footer-widget">
+                            <div class="widget-title">
+                                <h5>Linkler</h5>
+                            </div>
+                            <nav class="widget-nav">
+                                <ul>
+                                    <li><a href="https://www.suski.gov.tr/" target="_blank">ŞUSKİ</a></li>
+                                    <li><a href="https://posta.sanliurfa.bel.tr/" target="_blank">WEBMAİL</a></li>
+                                    <li><a href="https://www.urfaulasim.com.tr/" target="_blank">URFA ULAŞIM</a></li>
+                                    <li><a href="https://ebys.sanliurfa.bel.tr/" target="_blank">EBYS</a></li>
+                                    <li><a href="https://www.sanliurfabeltur.com/" target="_blank">BELTUR</a></li>
+                                    <li><a href="https://www.sanliurfa.bel.tr/kategori/128/0/baglanti" target="_blank">BAĞLANTILAR</a></li>
+                                    <li><a href="https://acikriza.sanliurfa.bel.tr:444/portal/?pref=442156C2-0F6D-4FA1-AD4A-4A23B4795113&dept=1" target="_blank">KVKK</a></li>
+                                    <li><a href="https://qdms.sanliurfa.bel.tr/QDMS" target="_blank">QDMS</a></li>
+                                    <li><a href="https://www.sanliurfa.bel.tr/ziyaretci-raporu" target="_blank">Ziyaretçi Raporları</a></li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+
+                    <!-- İletişim -->
+                    <div class="col-12 col-sm-6 col-md-4 col-lg-4">
+                        <div class="single-footer-widget">
+                            <div class="widget-title">
+                                <h5>İLETİŞİM</h5>
+                            </div>
+
+                            <div class="contact-information">
+                                <p><span>Telefon:</span> 0 (414) 318 51 00</p>
+                                <p><span>Email:</span>
+                                    <a href="mailto:bilgi@sanliurfa.bel.tr" style="color:#fff;">
+                                        bilgi@sanliurfa.bel.tr
+                                    </a>
+                                </p>
+                                <p><span>Whatasapp:</span> 0 (414) 153 00 00</p>
+                                <p><span>Whatasapp:</span> 0 (414) 316 08 62</p>
+                                <p><span>Kep Adresi:</span> sanliurfabuyuksehirbelediyesi@hs01.kep.tr</p>
+                                <p><span>Adres:</span> Bamyasuyu Mahallesi 154. Sokak No:2<br>Haliliye / Şanlıurfa</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Musicurfa logo -->
+            <div class="container">
+                <div class="row d-flex justify-content-center align-items-center text-center">
+                    <div class="col-12 col-sm-6 col-lg-2">
+                        <a href="https://www.musicurfa.com.tr/" target="_blank">
+                            <img src="https://www.sanliurfa.bel.tr/assets/img/musicurfa.png" style="border-radius:10px;" alt="">
+                        </a>
+                    </div>
+                </div>
+                <br>
+            </div>
+        </div>
+
+        <!-- Footer Bottom Area -->
+        <div class="footer-bottom-area">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="border-line"></div>
+                    </div>
+                    <div class="col-12 col-md-6">
+                        <div class="copywrite-text">
+                            <p>
+                                Şanlıurfa Büyükşehir Belediyesi | Yazılım Şube Müdürlüğü
+                                &copy; Copyright
+                                <script>document.write(new Date().getFullYear());</script>
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Çerez Start -->
+                    <div id="cookieConsent">
+                        <p>
+                            Bu web sitesi, deneyiminizi iyileştirmek için çerezler kullanır.
+                            Daha fazla bilgi için
+                            <a href="https://www.sanliurfa.bel.tr/cerez-politikasi" target="_blank">çerez politikamızı</a> okuyun.
+                        </p>
+                        <button id="acceptCookies">Kabul Et</button>
+                    </div>
+                    <!-- Çerez End -->
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- ##### Footer Area End ##### -->
+
+    <!-- ##### All Javascript Files ##### -->
+    <script src="https://www.sanliurfa.bel.tr/assets/anasayfa/js/jquery/jquery-2.2.4.min.js"></script>
+    <script src="https://www.sanliurfa.bel.tr/assets/anasayfa/js/bootstrap/popper.min.js"></script>
+    <script src="https://www.sanliurfa.bel.tr/assets/anasayfa/js/bootstrap/bootstrap.min.js"></script>
+    <script src="https://www.sanliurfa.bel.tr/assets/anasayfa/js/jquery/jquery-migrate.js"></script>
+    <script src="https://www.sanliurfa.bel.tr/assets/anasayfa/js/jquery/jquery-ui.js"></script>
+    <script src="https://www.sanliurfa.bel.tr/assets/anasayfa/js/plugins/plugins.js"></script>
+    <script src="https://www.sanliurfa.bel.tr/assets/anasayfa/js/active.js"></script>
+    <script src="https://www.sanliurfa.bel.tr/js/jquery.fancybox.min.js" type="text/javascript"></script>
+
+    <script>
+        // Çerez kontrol
+        function checkCookieConsent() {
+            if (!localStorage.getItem("cookieAccepted")) {
+                document.getElementById('cookieConsent').style.display = 'block';
+            }
+        }
+
+        document.getElementById('acceptCookies').addEventListener('click', function () {
+            localStorage.setItem("cookieAccepted", "true");
+            document.getElementById('cookieConsent').style.display = 'none';
+        });
+
+        window.onload = checkCookieConsent;
+    </script>
+	
+	<!----------Erişebilirlik Start---------------->
+	<button id="accessibilityBtn" class="accessibility-btn">
+		<i class="fa fa-universal-access"></i>
+	</button>
+
+<div id="readingGuide"></div>
+<div id="readingMaskTop"></div>
+<div id="readingMaskBottom"></div>
+
+<div id="accessibilityPanel" class="accessibility-panel">
+
+    <div class="panel-header">
+        <h5>Erişilebilirlik Menüsü</h5>
+        <button type="button" id="closeAccessibility">✕</button>
+    </div>
+
+    <div class="access-section-title text-right">Profiller</div>
+	<hr>
+    <div class="access-grid">
+        <button type="button" data-action="profileSeizureSafe">◉<span>Nöbet Güvenli</span></button>
+        <button type="button" data-action="profileVision">👁<span>Görme Engelli</span></button>
+        <button type="button" data-class="dyslexia-font">T<span>Disleksi</span></button>
+        <button type="button" data-action="profileMotor">🏃<span>Motor Engelli</span></button>
+        <button type="button" data-action="profileCognitive">ℹ<span>Bilişsel Öğrenme</span></button>
+        <button type="button" data-action="profileAdhd">✓<span>DEHB</span></button>
+    </div>
+	<hr>
+	
+    <div class="access-grid">
+        <button type="button" onclick="fontSizeDecrease()">−<span>Yazıyı Küçült</span></button>
+        <button type="button" onclick="fontSizeIncrease()">＋<span>Yazıyı Büyüt</span></button>
+
+        <button type="button" data-class="bold-text">B<span>Yazı Tipi Kalınlığı</span></button>
+        <button type="button" data-class="justify-text">☰<span>İki Yana Yasla</span></button>
+        <button type="button" data-class="word-spacing">|||<span>Kelime Aralığı</span></button>
+        <button type="button" data-class="letter-spacing">|A|<span>Harf Aralığı</span></button>
+        <button type="button" data-class="line-height">A<span>Satır Yüksekliği</span></button>
+        <button type="button" data-class="dyslexia-font">A✓<span>Disleksi Yazı Tipi</span></button>
+        <button type="button" data-class="big-cursor">🖱<span>Büyük İmleç</span></button>
+        <button type="button" data-class="reading-guide">━<span>Okuma Kılavuzu</span></button>
+        <button type="button" data-class="reading-mask">📖<span>Okuma Maskesi</span></button>
+        <button type="button" data-class="hide-images">🚫<span>Görselleri Gizle</span></button>
+        <button type="button" data-class="high-contrast">◐<span>Kontrast</span></button>
+        <button type="button" data-class="saturation">✿<span>Doygunluk</span></button>
+        <button type="button" data-class="page-structure">☷<span>Sayfa Yapısı</span></button>
+        <button type="button" data-class="highlight-headings">T<span>Başlıkları Vurgula</span></button>
+        <button type="button" data-class="highlight-links">🔗<span>Bağlantıları Vurgula</span></button>
+
+        <button type="button" onclick="readPage()">A🔊<span>Ekran Okuyucu</span></button>
+        <button type="button" onclick="stopReading()">⏹<span>Okumayı Durdur</span></button>
+    </div>
+	<hr>
+    <button type="button" class="reset-access-btn" onclick="resetAccessibility()">Ayarları Sıfırla</button>
+</div>
+
+<style>
+.accessibility-btn {
+    position: fixed !important;
+    right: 20px !important;
+    bottom: 20px !important;
+    width: 62px !important;
+    height: 62px !important;
+    border-radius: 50% !important;
+    border: 3px solid #fff !important;
+    background: #2454c6 !important;
+    color: #fff !important;
+    font-size: 30px !important;
+    z-index: 2147483647 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    cursor: pointer !important;
+    box-shadow: 0 8px 25px rgba(0,0,0,.35) !important;
+    filter: none !important;
+}
+
+.accessibility-panel {
+    display: none;
+    position: fixed !important;
+    right: 20px !important;
+    bottom: 95px !important;
+    width: 420px;
+    max-width: calc(100% - 40px);
+    max-height: 80vh;
+    overflow-y: auto;
+    background: #eef2f8 !important;
+    color: #111 !important;
+    border-radius: 18px;
+    padding: 18px;
+    z-index: 2147483647 !important;
+    box-shadow: 0 12px 40px rgba(0,0,0,.28);
+    filter: none !important;
+}
+
+.panel-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.panel-header h5 {
+    margin: 0;
+    color: #111 !important;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.panel-header button {
+    width: 38px;
+    height: 38px;
+    border: none;
+    background: #fff !important;
+    color: #111 !important;
+    border-radius: 50%;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.access-section-title {
+    font-weight: 700;
+    margin: 12px 0;
+    color: #222 !important;
+}
+
+.access-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin-bottom: 18px;
+}
+
+.access-grid button {
+    position: relative;
+    min-height: 105px;
+    border: 2px solid transparent !important;
+    border-radius: 15px;
+    background: #fff !important;
+    color: #000 !important;
+    font-size: 28px;
+    font-weight: 700;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.access-grid button span {
+    display: block;
+    margin-top: 8px;
+    font-size: 15px;
+    line-height: 18px;
+    font-weight: 700;
+    color: #000 !important;
+}
+
+.access-grid button.active-access {
+    border-color: #2454c6 !important;
+    background: #eef4ff !important;
+    box-shadow: 0 0 0 3px rgba(36,84,198,.15);
+}
+
+.access-grid button.active-access::after {
+    content: "✓";
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    width: 23px;
+    height: 23px;
+    border-radius: 50%;
+    background: #2454c6;
+    color: #fff;
+    font-size: 13px;
+    line-height: 23px;
+    text-align: center;
+    font-weight: 800;
+}
+
+.reset-access-btn {
+    width: 100%;
+    padding: 15px;
+    border: none;
+    border-radius: 9px;
+    background: #2454c6 !important;
+    color: #fff !important;
+    font-weight: 700;
+    font-size: 17px;
+    cursor: pointer;
+}
+
+.high-contrast *:not(#accessibilityBtn):not(#accessibilityPanel):not(#accessibilityPanel *) {
+    background-color: #000 !important;
+    color: #fff !important;
+    border-color: #fff !important;
+}
+
+.grayscale *:not(#accessibilityBtn):not(#accessibilityPanel):not(#accessibilityPanel *) {
+    filter: grayscale(100%) !important;
+}
+
+.bold-text *:not(#accessibilityPanel):not(#accessibilityPanel *) {
+    font-weight: 800 !important;
+}
+
+.justify-text p,
+.justify-text div,
+.justify-text article {
+    text-align: justify !important;
+}
+
+.word-spacing *:not(#accessibilityPanel):not(#accessibilityPanel *) {
+    word-spacing: 8px !important;
+}
+
+.letter-spacing *:not(#accessibilityPanel):not(#accessibilityPanel *) {
+    letter-spacing: 2px !important;
+}
+
+.line-height *:not(#accessibilityPanel):not(#accessibilityPanel *) {
+    line-height: 2 !important;
+}
+
+.dyslexia-font *:not(#accessibilityPanel):not(#accessibilityPanel *) {
+    font-family: Arial, Verdana, sans-serif !important;
+    letter-spacing: 1px !important;
+}
+
+.big-cursor,
+.big-cursor * {
+    cursor: url('https://cur.cursors-4u.net/cursors/cur-2/cur116.cur'), auto !important;
+}
+
+.hide-images img:not(#accessibilityPanel img) {
+    visibility: hidden !important;
+}
+
+.saturation *:not(#accessibilityBtn):not(#accessibilityPanel):not(#accessibilityPanel *) {
+    filter: saturate(180%) !important;
+}
+
+.page-structure h1,
+.page-structure h2,
+.page-structure h3,
+.page-structure h4,
+.page-structure h5,
+.page-structure h6,
+.page-structure p,
+.page-structure a,
+.page-structure li,
+.page-structure section,
+.page-structure article {
+    outline: 2px dashed #2454c6 !important;
+    outline-offset: 3px;
+}
+
+.highlight-headings h1,
+.highlight-headings h2,
+.highlight-headings h3,
+.highlight-headings h4,
+.highlight-headings h5,
+.highlight-headings h6 {
+    background: #ffff00 !important;
+    color: #000 !important;
+    padding: 5px !important;
+}
+
+.highlight-links a {
+    background: #ffff00 !important;
+    color: #000 !important;
+    text-decoration: underline !important;
+    outline: 2px solid #000 !important;
+}
+
+.stop-animations *,
+.stop-animations *::before,
+.stop-animations *::after {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+}
+
+#readingGuide {
+    display: none;
+    position: fixed;
+    left: 0;
+    width: 100%;
+    height: 6px;
+    background: #2454c6;
+    z-index: 2147483646;
+    pointer-events: none;
+}
+
+#readingMaskTop,
+#readingMaskBottom {
+    display: none;
+    position: fixed;
+    left: 0;
+    width: 100%;
+    background: rgba(0,0,0,.65);
+    z-index: 2147483645;
+    pointer-events: none;
+}
+
+@media(max-width: 576px) {
+    .accessibility-panel {
+        right: 10px !important;
+        bottom: 85px !important;
+        width: calc(100% - 20px);
+    }
+
+    .access-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+</style>
+
+<script>
+let fontSize = parseInt(localStorage.getItem('fontSize')) || 100;
+let speechUtterance = null;
+
+const accessClasses = [
+    'high-contrast',
+    'grayscale',
+    'big-cursor',
+    'hide-images',
+    'bold-text',
+    'justify-text',
+    'word-spacing',
+    'letter-spacing',
+    'line-height',
+    'dyslexia-font',
+    'saturation',
+    'page-structure',
+    'highlight-headings',
+    'highlight-links',
+    'stop-animations',
+    'reading-guide',
+    'reading-mask'
+];
+
+document.addEventListener('DOMContentLoaded', function () {
+    document.body.style.fontSize = fontSize + '%';
+
+    const btn = document.getElementById('accessibilityBtn');
+    const panel = document.getElementById('accessibilityPanel');
+    const closeBtn = document.getElementById('closeAccessibility');
+
+    btn.addEventListener('click', function () {
+        panel.style.display = panel.style.display === 'block' ? 'none' : 'block';
+    });
+
+    closeBtn.addEventListener('click', function () {
+        panel.style.display = 'none';
+    });
+
+    accessClasses.forEach(function(cls) {
+        if (localStorage.getItem(cls) === 'true') {
+            document.body.classList.add(cls);
+        }
+    });
+
+    updateActiveButtons();
+
+    document.querySelectorAll('#accessibilityPanel [data-class]').forEach(function(button) {
+        button.addEventListener('click', function() {
+            const className = this.getAttribute('data-class');
+            toggleAccessClass(className);
+        });
+    });
+
+    document.querySelectorAll('#accessibilityPanel [data-action]').forEach(function(button) {
+        button.addEventListener('click', function() {
+            const actionName = this.getAttribute('data-action');
+
+            if (typeof window[actionName] === 'function') {
+                window[actionName]();
+            }
+
+            updateActiveButtons();
+        });
+    });
+
+    document.addEventListener('mousemove', function(e) {
+        const guide = document.getElementById('readingGuide');
+
+        if (document.body.classList.contains('reading-guide')) {
+            guide.style.display = 'block';
+            guide.style.top = e.clientY + 'px';
+        }
+
+        if (document.body.classList.contains('reading-mask')) {
+            let topMask = document.getElementById('readingMaskTop');
+            let bottomMask = document.getElementById('readingMaskBottom');
+
+            topMask.style.display = 'block';
+            bottomMask.style.display = 'block';
+
+            topMask.style.top = '0';
+            topMask.style.height = Math.max(e.clientY - 55, 0) + 'px';
+
+            bottomMask.style.top = (e.clientY + 55) + 'px';
+            bottomMask.style.height = '100vh';
+        }
+    });
+});
+
+function toggleAccessClass(className) {
+    document.body.classList.toggle(className);
+    localStorage.setItem(className, document.body.classList.contains(className));
+
+    if (className === 'reading-guide' && !document.body.classList.contains('reading-guide')) {
+        document.getElementById('readingGuide').style.display = 'none';
+    }
+
+    if (className === 'reading-mask' && !document.body.classList.contains('reading-mask')) {
+        document.getElementById('readingMaskTop').style.display = 'none';
+        document.getElementById('readingMaskBottom').style.display = 'none';
+    }
+
+    updateActiveButtons();
+}
+
+function updateActiveButtons() {
+    document.querySelectorAll('#accessibilityPanel [data-class]').forEach(function(button) {
+        const className = button.getAttribute('data-class');
+
+        if (document.body.classList.contains(className)) {
+            button.classList.add('active-access');
+        } else {
+            button.classList.remove('active-access');
+        }
+    });
+}
+
+function fontSizeIncrease() {
+    fontSize += 10;
+    document.body.style.fontSize = fontSize + '%';
+    localStorage.setItem('fontSize', fontSize);
+}
+
+function fontSizeDecrease() {
+    fontSize -= 10;
+    if (fontSize < 80) fontSize = 80;
+    document.body.style.fontSize = fontSize + '%';
+    localStorage.setItem('fontSize', fontSize);
+}
+
+function profileSeizureSafe() {
+    document.body.classList.add('stop-animations');
+    document.body.classList.remove('saturation');
+
+    localStorage.setItem('stop-animations', 'true');
+    localStorage.setItem('saturation', 'false');
+
+    updateActiveButtons();
+}
+
+function profileVision() {
+    document.body.classList.add('high-contrast', 'bold-text');
+
+    localStorage.setItem('high-contrast', 'true');
+    localStorage.setItem('bold-text', 'true');
+
+    fontSize = 120;
+    document.body.style.fontSize = '120%';
+    localStorage.setItem('fontSize', fontSize);
+
+    updateActiveButtons();
+}
+
+function profileMotor() {
+    document.body.classList.add('big-cursor');
+    localStorage.setItem('big-cursor', 'true');
+
+    updateActiveButtons();
+}
+
+function profileCognitive() {
+    document.body.classList.add('highlight-links', 'highlight-headings', 'line-height');
+
+    localStorage.setItem('highlight-links', 'true');
+    localStorage.setItem('highlight-headings', 'true');
+    localStorage.setItem('line-height', 'true');
+
+    updateActiveButtons();
+}
+
+function profileAdhd() {
+    document.body.classList.add('reading-mask');
+    localStorage.setItem('reading-mask', 'true');
+
+    updateActiveButtons();
+}
+
+function readPage() {
+    stopReading();
+
+    let content = document.body.innerText || '';
+    let panelText = document.getElementById('accessibilityPanel')?.innerText || '';
+
+    content = content.replace(panelText, '').trim();
+
+    if (!content) {
+        alert('Okunacak içerik bulunamadı.');
+        return;
+    }
+
+    speechUtterance = new SpeechSynthesisUtterance(content);
+    speechUtterance.lang = 'tr-TR';
+    speechUtterance.rate = 0.9;
+    speechUtterance.pitch = 1;
+    speechUtterance.volume = 1;
+
+    window.speechSynthesis.speak(speechUtterance);
+}
+
+function stopReading() {
+    if ('speechSynthesis' in window) {
+        window.speechSynthesis.cancel();
+    }
+}
+
+function resetAccessibility() {
+    stopReading();
+
+    accessClasses.forEach(function(cls) {
+        document.body.classList.remove(cls);
+        localStorage.removeItem(cls);
+    });
+
+    localStorage.removeItem('fontSize');
+
+    fontSize = 100;
+    document.body.style.fontSize = '100%';
+
+    document.getElementById('readingGuide').style.display = 'none';
+    document.getElementById('readingMaskTop').style.display = 'none';
+    document.getElementById('readingMaskBottom').style.display = 'none';
+
+    updateActiveButtons();
+}
+</script>
+	<!----------Erişebilirlik End---------------->	
+    </body>
+
+</html>

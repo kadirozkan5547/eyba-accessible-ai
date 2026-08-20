@@ -1,0 +1,7 @@
+{
+  "embedding_model": "qwen3-embedding-0.6b",
+  "knowledge_version": "2026-08-20",
+  "chunk_count": 47,
+  "dimensions": 1024,
+  "chunks_sha256": "953b5018fb7acafa9d3b14e4921c01d803b5a716f60a28fb75edef6399630a7d"
+}

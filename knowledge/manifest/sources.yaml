@@ -1,0 +1,198 @@
+version: '2026-08-20'
+sources:
+- id: aile_eyhgm_yayin_kaynak
+  title: Engelli ve Yaşlı Hizmetleri Yayın ve Kaynaklar
+  authority: T.C. Aile ve Sosyal Hizmetler Bakanlığı
+  source_tier: A
+  country: TR
+  city: null
+  topic:
+  - engelli_haklari
+  - sosyal_hizmetler
+  url: https://www.aile.gov.tr/eyhgm/yayin-kaynak/
+  retrieved_at: '2026-08-18'
+  language: tr
+  enabled: true
+- id: aile_eyhgm_erisilebilirlik
+  title: Hızlı Erişim — Erişilebilirlik
+  authority: T.C. Aile ve Sosyal Hizmetler Bakanlığı
+  source_tier: A
+  country: TR
+  city: null
+  topic:
+  - erisilebilirlik
+  - dijital_erisilebilirlik
+  url: https://www.aile.gov.tr/eyhgm/sayfalar/hizli-erisim-erisilebilirlik/
+  retrieved_at: '2026-08-18'
+  language: tr
+  enabled: true
+- id: aile_indirim_muafiyetler
+  title: Engellilere Sağlanan Diğer İndirim ve Muafiyetler
+  authority: T.C. Aile ve Sosyal Hizmetler Bakanlığı
+  source_tier: A
+  country: TR
+  city: null
+  topic:
+  - indirim_muafiyet
+  - engelli_haklari
+  url: https://www.aile.gov.tr/sss/engelli-ve-yasli-hizmetleri-genel-mudurlugu/engellilere-saglanan-diger-indirim-ve-muafiyetler/
+  retrieved_at: '2026-08-18'
+  language: tr
+  enabled: true
+- id: aile_engelli_haklari_sozlesme
+  title: Engellilerin Haklarına İlişkin Sözleşme
+  authority: T.C. Aile ve Sosyal Hizmetler Bakanlığı
+  source_tier: A
+  country: TR
+  city: null
+  topic:
+  - engelli_haklari
+  - mevzuat
+  url: https://www.aile.gov.tr/sss/engelli-ve-yasli-hizmetleri-genel-mudurlugu/engellilerin-haklarina-iliskin-sozlesme/
+  retrieved_at: '2026-08-18'
+  language: tr
+  enabled: true
+- id: edevlet_engelsiz_hizmetler
+  title: Engelsiz Hizmetleri
+  authority: e-Devlet Kapısı
+  source_tier: A
+  country: TR
+  city: null
+  topic:
+  - engelli_kimlik_karti
+  - basvuru_kanallari
+  - sosyal_hizmetler
+  url: https://www.turkiye.gov.tr/engelsiz-hizmetleri
+  retrieved_at: '2026-08-18'
+  language: tr
+  enabled: true
+- id: saglik_yetkili_tesisler
+  title: Engelli ve TSK Sağlık Kurulu Raporu Düzenlemeye Yetkili Sağlık Tesisleri
+  authority: T.C. Sağlık Bakanlığı
+  source_tier: A
+  country: TR
+  city: null
+  topic:
+  - saglik_kurulu_raporu
+  - yetkili_saglik_kuruluslari
+  url: https://khgmcalisanhaklaridb.saglik.gov.tr/TR-75288/engelli-ve-tsk-saglik-kurulu-raporu-duzenlemeye-yetkili-saglik-tesisleri.html
+  retrieved_at: '2026-08-18'
+  language: tr
+  enabled: true
+- id: saglik_eriskin_engellilik_yonetmelik
+  title: Erişkinler İçin Engellilik Değerlendirmesi Hakkında Yönetmelik
+  authority: T.C. Sağlık Bakanlığı
+  source_tier: A
+  country: TR
+  city: null
+  topic:
+  - saglik_kurulu_raporu
+  - mevzuat
+  url: https://khgmcalisanhaklaridb.saglik.gov.tr/TR-53198/eriskinler-icin-engellilik-degerlendirmesi-hakkinda-yonetmelik.html
+  retrieved_at: '2026-08-18'
+  language: tr
+  enabled: true
+- id: iskur_engelli_kaydi
+  title: İŞKUR'a Engelli Kaydı
+  authority: T.C. Çalışma ve Sosyal Güvenlik Bakanlığı — İŞKUR
+  source_tier: A
+  country: TR
+  city: null
+  topic:
+  - istihdam
+  - iskur
+  url: https://engelsiz.iskur.gov.tr/kurumsal/iskur-a-engelli-kaydi/
+  retrieved_at: '2026-08-20'
+  language: tr
+  enabled: true
+- id: iskur_engelli_istihdami
+  title: Engelli İstihdamı
+  authority: T.C. Çalışma ve Sosyal Güvenlik Bakanlığı — İŞKUR
+  source_tier: A
+  country: TR
+  city: null
+  topic:
+  - istihdam
+  - isveren
+  url: https://www.iskur.gov.tr/isveren/engelli-istihdami/
+  retrieved_at: '2026-08-20'
+  language: tr
+  enabled: true
+- id: osym_ekpss
+  title: EKPSS Sınav Grubu
+  authority: T.C. Ölçme, Seçme ve Yerleştirme Merkezi (ÖSYM)
+  source_tier: A
+  country: TR
+  city: null
+  topic:
+  - ekpss
+  - istihdam
+  url: https://www.osym.gov.tr/SinavGrubu/Index/4
+  retrieved_at: '2026-08-18'
+  language: tr
+  enabled: true
+- id: afad_afet_cantasi
+  title: Afet ve Acil Durum Çantası Nasıl Hazırlanmalı
+  authority: T.C. İçişleri Bakanlığı — AFAD
+  source_tier: A
+  country: TR
+  city: null
+  topic:
+  - afet
+  - hazirlik
+  url: https://www.afad.gov.tr/afet-ve-acil-durum-cantasi-nasil-hazirlanmali
+  retrieved_at: '2026-08-18'
+  language: tr
+  enabled: true
+- id: afad_deprem_onlemler
+  title: Deprem Öncesi, Anı ve Sonrası Alabileceğiniz Önlemler
+  authority: T.C. İçişleri Bakanlığı — AFAD
+  source_tier: A
+  country: TR
+  city: null
+  topic:
+  - afet
+  - deprem
+  url: https://www.afad.gov.tr/deprem-oncesi-ani-ve-sonrasi-alabileceginiz-onlemleri-biliyor-musunuz
+  retrieved_at: '2026-08-18'
+  language: tr
+  enabled: true
+- id: uab_erisilebilir_ulasim
+  title: Ulaşım ve İletişimde Engelsiz Projeler
+  authority: T.C. Ulaştırma ve Altyapı Bakanlığı
+  source_tier: A
+  country: TR
+  city: null
+  topic:
+  - erisilebilir_ulasim
+  url: https://www.uab.gov.tr/haberler/ulasim-ve-iletisimde-engelsiz-projeler
+  retrieved_at: '2026-08-18'
+  language: tr
+  enabled: true
+- id: sanliurfa_engelsiz_yasam
+  title: Engelsiz Yaşam
+  authority: Şanlıurfa Büyükşehir Belediyesi
+  source_tier: A
+  country: TR
+  city: Şanlıurfa
+  topic:
+  - belediye
+  - yerel_hizmet
+  url: https://www.sanliurfa.bel.tr/kategori/41/0/engelsiz-yasam
+  retrieved_at: '2026-08-18'
+  language: tr
+  enabled: true
+- id: sanliurfa_koordinasyon_merkezi
+  title: Engelliler Koordinasyon ve Yaşam Merkezi
+  authority: Şanlıurfa Büyükşehir Belediyesi
+  source_tier: A
+  country: TR
+  city: Şanlıurfa
+  topic:
+  - belediye
+  - yerel_hizmet
+  - koordinasyon_merkezi
+  url: https://www.sanliurfa.bel.tr/icerik/5568/41/engelliler-koordinasyon-ve-yasam-merkezi
+  retrieved_at: '2026-08-18'
+  language: tr
+  enabled: true

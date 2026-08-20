@@ -1,0 +1,7 @@
+.venv/
+__pycache__/
+*.pyc
+.env
+knowledge/index/*.npy
+dist/
+tests/acceptance/*.json

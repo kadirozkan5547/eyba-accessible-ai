@@ -1,0 +1,20 @@
+{"question":"Afet çantasında hangi malzemeler bulunmalı?","expected_source":"afad_afet_cantasi","answerable":true}
+{"question":"Deprem sırasında binadaysam ne yapmalıyım?","expected_source":"afad_deprem_onlemler","answerable":true}
+{"question":"Engellilere şehirlerarası otobüslerde indirim var mı?","expected_source":"aile_indirim_muafiyetler","answerable":true}
+{"question":"Engellilerin Haklarına İlişkin Sözleşme'nin amacı nedir?","expected_source":"aile_engelli_haklari_sozlesme","answerable":true}
+{"question":"Erişilebilirlik İzleme ve Denetleme Komisyonları ne yapar?","expected_source":"aile_eyhgm_erisilebilirlik","answerable":true}
+{"question":"Engelli ve yaşlı hizmetleriyle ilgili hangi yayınlar var?","expected_source":"aile_eyhgm_yayin_kaynak","answerable":true}
+{"question":"e-Devlet'te engelli kimlik kartı başvurusu yapılabilir mi?","expected_source":"edevlet_engelsiz_hizmetler","answerable":true}
+{"question":"İŞKUR'a engelli olarak kayıt olmak için rapor oranı kaç olmalı?","expected_source":"iskur_engelli_kaydi","answerable":true}
+{"question":"Özel sektör işyerlerinde engelli çalıştırma kotası yüzde kaç?","expected_source":"iskur_engelli_istihdami","answerable":true}
+{"question":"EKPSS başvuru ve sınav duyurularını hangi kurum yayımlar?","expected_source":"osym_ekpss","answerable":true}
+{"question":"Engelli sağlık kurulu raporu vermeye yetkili hastane listesine nereden ulaşılır?","expected_source":"saglik_yetkili_tesisler","answerable":true}
+{"question":"Erişkin engellilik değerlendirmesi yönetmeliğinin amacı nedir?","expected_source":"saglik_eriskin_engellilik_yonetmelik","answerable":true}
+{"question":"Ulaşımda erişilebilirlik için hangi projeler yürütülüyor?","expected_source":"uab_erisilebilir_ulasim","answerable":true}
+{"question":"Şanlıurfa Engelsiz Yaşam sayfasında hangi hizmet başlıkları var?","expected_source":"sanliurfa_engelsiz_yasam","answerable":true}
+{"question":"Şanlıurfa Engelliler Koordinasyon ve Yaşam Merkezi hangi hizmetleri sunuyor?","expected_source":"sanliurfa_koordinasyon_merkezi","answerable":true}
+{"question":"Yarın İstanbul'da hava nasıl olacak?","expected_source":null,"answerable":false}
+{"question":"Bana mercimek çorbası tarifi verir misin?","expected_source":null,"answerable":false}
+{"question":"Fenerbahçe'nin son maç skoru kaç kaç?","expected_source":null,"answerable":false}
+{"question":"Bitcoin fiyatı bugün ne kadar?","expected_source":null,"answerable":false}
+{"question":"Python'da bir listeyi nasıl sıralarım?","expected_source":null,"answerable":false}

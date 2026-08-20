@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <title>{{ product_name }}</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f4f7fb;
+      --surface: #ffffff;
+      --text: #132238;
+      --muted: #42566f;
+      --primary: #073b78;
+      --primary-hover: #052b59;
+      --focus: #a93d00;
+      --border: #8292a6;
+      --danger: #8c1d18;
+      font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--bg); color: var(--text); font-size: 1.125rem; line-height: 1.6; }
+    .skip-link { position: absolute; left: 1rem; top: -5rem; padding: .75rem 1rem; background: var(--surface); color: var(--primary); z-index: 10; }
+    .skip-link:focus { top: 1rem; }
+    header, main, footer { width: min(52rem, calc(100% - 2rem)); margin-inline: auto; }
+    header { padding-block: 2rem 1rem; }
+    h1 { margin: 0; font-size: clamp(1.8rem, 5vw, 2.7rem); line-height: 1.2; }
+    .lead { color: var(--muted); max-width: 45rem; }
+    .panel { background: var(--surface); border: 1px solid var(--border); border-radius: .75rem; padding: clamp(1rem, 4vw, 2rem); box-shadow: 0 3px 14px rgb(19 34 56 / 10%); }
+    label { display: block; font-weight: 700; margin-bottom: .5rem; }
+    textarea { display: block; width: 100%; min-height: 8rem; resize: vertical; padding: .8rem; border: 2px solid var(--border); border-radius: .4rem; background: var(--surface); color: var(--text); font: inherit; }
+    textarea:focus, button:focus-visible, a:focus-visible { outline: 4px solid var(--focus); outline-offset: 3px; }
+    .hint { color: var(--muted); font-size: 1rem; margin-block: .4rem 1rem; }
+    .actions { display: flex; flex-wrap: wrap; gap: .75rem; }
+    button { min-height: 3rem; min-width: 3rem; border: 2px solid var(--primary); border-radius: .4rem; padding: .65rem 1.1rem; font: inherit; font-weight: 700; cursor: pointer; }
+    button[type="submit"] { background: var(--primary); color: #fff; }
+    button[type="submit"]:hover { background: var(--primary-hover); }
+    button[type="button"] { background: var(--surface); color: var(--primary); }
+    button:disabled { cursor: wait; opacity: .65; }
+    #status { min-height: 1.8rem; margin-block: 1rem 0; font-weight: 650; }
+    #status.error { color: var(--danger); }
+    #result { margin-top: 1.25rem; }
+    #result[hidden] { display: none; }
+    .answer { white-space: pre-wrap; }
+    .sources { padding-left: 1.35rem; }
+    .source { margin-bottom: .7rem; }
+    .source-meta { display: block; color: var(--muted); font-size: .95rem; }
+    footer { padding-block: 1.5rem 2.5rem; color: var(--muted); font-size: .95rem; }
+    @media (prefers-reduced-motion: reduce) { *, *::before, *::after { scroll-behavior: auto !important; } }
+    @media (forced-colors: active) { .panel, textarea, button { border: 2px solid CanvasText; } }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Ana içeriğe geç</a>
+  <header>
+    <h1>{{ product_name }}</h1>
+    <p class="lead">Engelli hakları ve kamu hizmetleri hakkında, cihazdaki resmî kaynaklara dayalı bilgi alın.</p>
+  </header>
+  <main id="main-content" tabindex="-1">
+    <section class="panel" aria-labelledby="question-heading">
+      <h2 id="question-heading">Sorunuzu yazın</h2>
+      <form id="ask-form" aria-busy="false">
+        <label for="question">Soru</label>
+        <textarea id="question" name="question" required maxlength="{{ max_question_chars }}" aria-describedby="question-hint"></textarea>
+        <p class="hint" id="question-hint">Kişisel kimlik, sağlık veya iletişim bilgilerinizi yazmayın. En fazla {{ max_question_chars }} karakter.</p>
+        <div class="actions">
+          <button id="submit" type="submit">Yanıtı getir</button>
+          <button id="clear" type="button">Temizle</button>
+        </div>
+      </form>
+      <noscript><p class="error">Bu arayüzün çalışması için tarayıcınızda JavaScript açık olmalıdır.</p></noscript>
+      <p id="status" role="status" aria-live="polite"></p>
+      <section id="result" hidden aria-labelledby="answer-heading">
+        <h2 id="answer-heading" tabindex="-1">Yanıt</h2>
+        <p class="answer" id="answer"></p>
+        <div id="source-region">
+          <h3>Kaynaklar</h3>
+          <ul class="sources" id="sources"></ul>
+        </div>
+      </section>
+    </section>
+  </main>
+  <footer>Uygulama sürümü: {{ app_version }}. Bilgi tabanı sürümü: {{ knowledge_version }}. Uygulama çalışma sırasında dış ağa bağlanmaz.</footer>
+  <script>
+    const form = document.querySelector('#ask-form');
+    const question = document.querySelector('#question');
+    const submit = document.querySelector('#submit');
+    const clear = document.querySelector('#clear');
+    const status = document.querySelector('#status');
+    const result = document.querySelector('#result');
+    const answer = document.querySelector('#answer');
+    const sources = document.querySelector('#sources');
+    const sourceRegion = document.querySelector('#source-region');
+
+    function resetResult() {
+      result.hidden = true;
+      answer.textContent = '';
+      sources.replaceChildren();
+      status.textContent = '';
+      status.classList.remove('error');
+    }
+
+    clear.addEventListener('click', () => {
+      form.reset();
+      resetResult();
+      question.focus();
+    });
+
+    form.addEventListener('submit', async (event) => {
+      event.preventDefault();
+      resetResult();
+      submit.disabled = true;
+      clear.disabled = true;
+      form.setAttribute('aria-busy', 'true');
+      status.textContent = 'Yerel kaynaklarda aranıyor. Lütfen bekleyin.';
+      try {
+        const response = await fetch('/api/ask', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ question: question.value })
+        });
+        const data = await response.json();
+        if (!response.ok) throw new Error(data.detail || 'Yanıt alınamadı.');
+        answer.textContent = data.answer;
+        sourceRegion.hidden = data.sources.length === 0;
+        for (const item of data.sources) {
+          const li = document.createElement('li');
+          li.className = 'source';
+          const title = document.createElement('strong');
+          title.textContent = item.title;
+          const meta = document.createElement('span');
+          meta.className = 'source-meta';
+          meta.textContent = `${item.authority} — alınma tarihi ${item.retrieved_at}`;
+          li.append(title, meta);
+          sources.append(li);
+        }
+        result.hidden = false;
+        status.textContent = data.status === 'ok' ? 'Yanıt hazır.' : 'Yerel kaynaklarda yeterli bilgi bulunamadı.';
+        document.querySelector('#answer-heading').focus();
+      } catch (error) {
+        status.textContent = `Hata: ${error.message}`;
+        status.classList.add('error');
+      } finally {
+        submit.disabled = false;
+        clear.disabled = false;
+        form.setAttribute('aria-busy', 'false');
+      }
+    });
+  </script>
+</body>
+</html>

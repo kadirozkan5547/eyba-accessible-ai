@@ -1,0 +1,11 @@
+foundry-local-sdk-winml
+openai
+fastapi
+uvicorn
+jinja2
+numpy
+pydantic
+pydantic-settings
+pyyaml
+beautifulsoup4
+pypdf

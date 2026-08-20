@@ -1,0 +1,298 @@
+{
+  "summary": {
+    "index_meta": {
+      "embedding_model": "qwen3-embedding-0.6b",
+      "knowledge_version": "2026-08-20",
+      "chunk_count": 47,
+      "dimensions": 1024,
+      "chunks_sha256": "953b5018fb7acafa9d3b14e4921c01d803b5a716f60a28fb75edef6399630a7d"
+    },
+    "answerable_count": 15,
+    "top1_accuracy": 0.8666666666666667,
+    "top3_accuracy": 1.0,
+    "min_answerable_top_score": 0.43951132893562317,
+    "max_out_of_scope_top_score": 0.34129399061203003
+  },
+  "results": [
+    {
+      "question": "Afet çantasında hangi malzemeler bulunmalı?",
+      "expected_source": "afad_afet_cantasi",
+      "answerable": true,
+      "top_sources": [
+        "afad_afet_cantasi",
+        "afad_afet_cantasi",
+        "afad_afet_cantasi",
+        "afad_afet_cantasi"
+      ],
+      "top_score": 0.5335376262664795,
+      "hit_top1": true,
+      "hit_top3": true
+    },
+    {
+      "question": "Deprem sırasında binadaysam ne yapmalıyım?",
+      "expected_source": "afad_deprem_onlemler",
+      "answerable": true,
+      "top_sources": [
+        "afad_deprem_onlemler",
+        "afad_deprem_onlemler",
+        "afad_deprem_onlemler",
+        "afad_deprem_onlemler"
+      ],
+      "top_score": 0.6802964806556702,
+      "hit_top1": true,
+      "hit_top3": true
+    },
+    {
+      "question": "Engellilere şehirlerarası otobüslerde indirim var mı?",
+      "expected_source": "aile_indirim_muafiyetler",
+      "answerable": true,
+      "top_sources": [
+        "aile_indirim_muafiyetler",
+        "uab_erisilebilir_ulasim",
+        "aile_engelli_haklari_sozlesme",
+        "uab_erisilebilir_ulasim"
+      ],
+      "top_score": 0.5756700038909912,
+      "hit_top1": true,
+      "hit_top3": true
+    },
+    {
+      "question": "Engellilerin Haklarına İlişkin Sözleşme'nin amacı nedir?",
+      "expected_source": "aile_engelli_haklari_sozlesme",
+      "answerable": true,
+      "top_sources": [
+        "aile_engelli_haklari_sozlesme",
+        "aile_engelli_haklari_sozlesme",
+        "aile_engelli_haklari_sozlesme",
+        "iskur_engelli_istihdami"
+      ],
+      "top_score": 0.7170921564102173,
+      "hit_top1": true,
+      "hit_top3": true
+    },
+    {
+      "question": "Erişilebilirlik İzleme ve Denetleme Komisyonları ne yapar?",
+      "expected_source": "aile_eyhgm_erisilebilirlik",
+      "answerable": true,
+      "top_sources": [
+        "saglik_eriskin_engellilik_yonetmelik",
+        "aile_eyhgm_erisilebilirlik",
+        "aile_eyhgm_erisilebilirlik",
+        "edevlet_engelsiz_hizmetler"
+      ],
+      "top_score": 0.52516108751297,
+      "hit_top1": false,
+      "hit_top3": true
+    },
+    {
+      "question": "Engelli ve yaşlı hizmetleriyle ilgili hangi yayınlar var?",
+      "expected_source": "aile_eyhgm_yayin_kaynak",
+      "answerable": true,
+      "top_sources": [
+        "edevlet_engelsiz_hizmetler",
+        "aile_eyhgm_yayin_kaynak",
+        "aile_eyhgm_yayin_kaynak",
+        "edevlet_engelsiz_hizmetler"
+      ],
+      "top_score": 0.5906955599784851,
+      "hit_top1": false,
+      "hit_top3": true
+    },
+    {
+      "question": "e-Devlet'te engelli kimlik kartı başvurusu yapılabilir mi?",
+      "expected_source": "edevlet_engelsiz_hizmetler",
+      "answerable": true,
+      "top_sources": [
+        "edevlet_engelsiz_hizmetler",
+        "iskur_engelli_kaydi",
+        "edevlet_engelsiz_hizmetler",
+        "aile_eyhgm_erisilebilirlik"
+      ],
+      "top_score": 0.43951132893562317,
+      "hit_top1": true,
+      "hit_top3": true
+    },
+    {
+      "question": "İŞKUR'a engelli olarak kayıt olmak için rapor oranı kaç olmalı?",
+      "expected_source": "iskur_engelli_kaydi",
+      "answerable": true,
+      "top_sources": [
+        "iskur_engelli_kaydi",
+        "iskur_engelli_kaydi",
+        "iskur_engelli_istihdami",
+        "aile_engelli_haklari_sozlesme"
+      ],
+      "top_score": 0.7127233147621155,
+      "hit_top1": true,
+      "hit_top3": true
+    },
+    {
+      "question": "Özel sektör işyerlerinde engelli çalıştırma kotası yüzde kaç?",
+      "expected_source": "iskur_engelli_istihdami",
+      "answerable": true,
+      "top_sources": [
+        "iskur_engelli_istihdami",
+        "iskur_engelli_kaydi",
+        "aile_engelli_haklari_sozlesme",
+        "aile_indirim_muafiyetler"
+      ],
+      "top_score": 0.5783039927482605,
+      "hit_top1": true,
+      "hit_top3": true
+    },
+    {
+      "question": "EKPSS başvuru ve sınav duyurularını hangi kurum yayımlar?",
+      "expected_source": "osym_ekpss",
+      "answerable": true,
+      "top_sources": [
+        "osym_ekpss",
+        "edevlet_engelsiz_hizmetler",
+        "edevlet_engelsiz_hizmetler",
+        "edevlet_engelsiz_hizmetler"
+      ],
+      "top_score": 0.6965544819831848,
+      "hit_top1": true,
+      "hit_top3": true
+    },
+    {
+      "question": "Engelli sağlık kurulu raporu vermeye yetkili hastane listesine nereden ulaşılır?",
+      "expected_source": "saglik_yetkili_tesisler",
+      "answerable": true,
+      "top_sources": [
+        "saglik_yetkili_tesisler",
+        "edevlet_engelsiz_hizmetler",
+        "edevlet_engelsiz_hizmetler",
+        "edevlet_engelsiz_hizmetler"
+      ],
+      "top_score": 0.665205180644989,
+      "hit_top1": true,
+      "hit_top3": true
+    },
+    {
+      "question": "Erişkin engellilik değerlendirmesi yönetmeliğinin amacı nedir?",
+      "expected_source": "saglik_eriskin_engellilik_yonetmelik",
+      "answerable": true,
+      "top_sources": [
+        "saglik_eriskin_engellilik_yonetmelik",
+        "aile_engelli_haklari_sozlesme",
+        "aile_eyhgm_erisilebilirlik",
+        "edevlet_engelsiz_hizmetler"
+      ],
+      "top_score": 0.6935850381851196,
+      "hit_top1": true,
+      "hit_top3": true
+    },
+    {
+      "question": "Ulaşımda erişilebilirlik için hangi projeler yürütülüyor?",
+      "expected_source": "uab_erisilebilir_ulasim",
+      "answerable": true,
+      "top_sources": [
+        "uab_erisilebilir_ulasim",
+        "uab_erisilebilir_ulasim",
+        "uab_erisilebilir_ulasim",
+        "aile_eyhgm_erisilebilirlik"
+      ],
+      "top_score": 0.532394289970398,
+      "hit_top1": true,
+      "hit_top3": true
+    },
+    {
+      "question": "Şanlıurfa Engelsiz Yaşam sayfasında hangi hizmet başlıkları var?",
+      "expected_source": "sanliurfa_engelsiz_yasam",
+      "answerable": true,
+      "top_sources": [
+        "sanliurfa_engelsiz_yasam",
+        "edevlet_engelsiz_hizmetler",
+        "edevlet_engelsiz_hizmetler",
+        "sanliurfa_koordinasyon_merkezi"
+      ],
+      "top_score": 0.6607638597488403,
+      "hit_top1": true,
+      "hit_top3": true
+    },
+    {
+      "question": "Şanlıurfa Engelliler Koordinasyon ve Yaşam Merkezi hangi hizmetleri sunuyor?",
+      "expected_source": "sanliurfa_koordinasyon_merkezi",
+      "answerable": true,
+      "top_sources": [
+        "sanliurfa_koordinasyon_merkezi",
+        "sanliurfa_engelsiz_yasam",
+        "aile_engelli_haklari_sozlesme",
+        "edevlet_engelsiz_hizmetler"
+      ],
+      "top_score": 0.766096293926239,
+      "hit_top1": true,
+      "hit_top3": true
+    },
+    {
+      "question": "Yarın İstanbul'da hava nasıl olacak?",
+      "expected_source": null,
+      "answerable": false,
+      "top_sources": [
+        "afad_deprem_onlemler",
+        "afad_deprem_onlemler",
+        "iskur_engelli_kaydi",
+        "edevlet_engelsiz_hizmetler"
+      ],
+      "top_score": 0.2577533423900604,
+      "hit_top1": false,
+      "hit_top3": false
+    },
+    {
+      "question": "Bana mercimek çorbası tarifi verir misin?",
+      "expected_source": null,
+      "answerable": false,
+      "top_sources": [
+        "aile_engelli_haklari_sozlesme",
+        "afad_afet_cantasi",
+        "afad_deprem_onlemler",
+        "aile_engelli_haklari_sozlesme"
+      ],
+      "top_score": 0.34129399061203003,
+      "hit_top1": false,
+      "hit_top3": false
+    },
+    {
+      "question": "Fenerbahçe'nin son maç skoru kaç kaç?",
+      "expected_source": null,
+      "answerable": false,
+      "top_sources": [
+        "saglik_yetkili_tesisler",
+        "aile_engelli_haklari_sozlesme",
+        "edevlet_engelsiz_hizmetler",
+        "afad_afet_cantasi"
+      ],
+      "top_score": 0.19759540259838104,
+      "hit_top1": false,
+      "hit_top3": false
+    },
+    {
+      "question": "Bitcoin fiyatı bugün ne kadar?",
+      "expected_source": null,
+      "answerable": false,
+      "top_sources": [
+        "afad_deprem_onlemler",
+        "edevlet_engelsiz_hizmetler",
+        "afad_deprem_onlemler",
+        "osym_ekpss"
+      ],
+      "top_score": 0.22462551295757294,
+      "hit_top1": false,
+      "hit_top3": false
+    },
+    {
+      "question": "Python'da bir listeyi nasıl sıralarım?",
+      "expected_source": null,
+      "answerable": false,
+      "top_sources": [
+        "afad_deprem_onlemler",
+        "afad_deprem_onlemler",
+        "afad_afet_cantasi",
+        "afad_deprem_onlemler"
+      ],
+      "top_score": 0.29012206196784973,
+      "hit_top1": false,
+      "hit_top3": false
+    }
+  ]
+}
