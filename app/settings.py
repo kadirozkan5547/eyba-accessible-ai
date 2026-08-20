@@ -11,7 +11,7 @@ KNOWLEDGE_DIR = BASE_DIR / "knowledge"
 class Settings(BaseSettings):
     app_name: str = "Accessible Local RAG"
     product_name_tr: str = "Erişilebilir Yerel Bilgi Asistanı"
-    app_version: str = "1.0.0"
+    app_version: str = "1.1.0"
 
     # Modeller — plan §11.2
     embedding_model: str = "qwen3-embedding-0.6b"

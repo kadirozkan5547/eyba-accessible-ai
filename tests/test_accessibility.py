@@ -49,13 +49,18 @@ class AccessibilityTests(unittest.TestCase):
         self.assertIn("min-width: 3rem", self.template)
         self.assertIn('role="status"', self.template)
         self.assertIn('aria-live="polite"', self.template)
-        self.assertIn('aria-describedby="question-hint"', self.template)
+        self.assertIn('aria-describedby="question-hint question-count"', self.template)
         self.assertIn('tabindex="-1">Yanıt', self.template)
 
     def test_reflow_styles_do_not_require_fixed_page_width(self) -> None:
-        self.assertIn("width: min(52rem, calc(100% - 2rem))", self.template)
+        self.assertIn("width: min(70rem, calc(100% - 2rem))", self.template)
         self.assertIn("flex-wrap: wrap", self.template)
         self.assertNotRegex(self.template, r"width:\s*[4-9][0-9]{2,}px")
+
+    def test_scenarios_are_keyboard_native_buttons(self) -> None:
+        self.assertEqual(self.template.count('class="scenario-card"'), 6)
+        self.assertEqual(self.template.count('data-question="'), 6)
+        self.assertNotIn('role="button"', self.template)
 
 
 if __name__ == "__main__":

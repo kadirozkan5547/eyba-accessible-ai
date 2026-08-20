@@ -7,12 +7,13 @@ zamanında dış ağa bağlanmaz; embedding ve cevap üretimi Microsoft Foundry 
 
 ## Güncel durum
 
-- Uygulama sürümü: `1.0.0`
+- Uygulama sürümü: `1.1.0`
 - 15 resmî kaynak, ham arşiv ve SHA-256 doğrulaması
 - 47 metadata'lı chunk, 1024 boyutlu yerel embedding indexi
 - Retrieval ölçümü: Top-1 `%86,7`, Top-3 `%100`
 - Yetersiz bağlam eşiği: `0.39`
 - FastAPI tabanlı Türkçe ve klavye erişilebilir web arayüzü
+- 6 kullanım senaryosu, karakter sayacı ve yanıt kopyalama içeren yönlendirmeli arayüz
 - Bilgi tabanı sürümü: `2026-08-20`
 
 ## Modeller
@@ -95,7 +96,7 @@ dosyasındadır.
 .\.venv\Scripts\python.exe scripts\package_release.py
 ```
 
-Komut `dist/eyba-1.0.0.zip` paketini ve yanında SHA-256 doğrulama dosyasını
+Komut `dist/eyba-1.1.0.zip` paketini ve yanında SHA-256 doğrulama dosyasını
 üretir. Foundry Local model ağırlıkları pakete eklenmez; hedef bilgisayarda
 `scripts/prepare_models.py` ile bir kez hazırlanmalıdır. Demo akışı
 [docs/DEMO_SENARYOSU.md](docs/DEMO_SENARYOSU.md) dosyasındadır.

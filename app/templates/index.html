@@ -3,85 +3,271 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="color-scheme" content="light dark">
+  <meta name="color-scheme" content="light">
   <title>{{ product_name }}</title>
   <style>
     :root {
       color-scheme: light;
-      --bg: #f4f7fb;
+      --bg: #eef3f8;
       --surface: #ffffff;
+      --surface-soft: #f5f8fc;
       --text: #132238;
       --muted: #42566f;
       --primary: #073b78;
       --primary-hover: #052b59;
+      --accent: #0f6f82;
+      --accent-soft: #dff4f5;
       --focus: #a93d00;
       --border: #8292a6;
       --danger: #8c1d18;
+      --success: #17633a;
+      --hero-start: #082f5f;
+      --hero-end: #0c5665;
+      --shadow: 0 1rem 2.5rem rgb(19 34 56 / 12%);
       font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
     }
     * { box-sizing: border-box; }
-    body { margin: 0; background: var(--bg); color: var(--text); font-size: 1.125rem; line-height: 1.6; }
-    .skip-link { position: absolute; left: 1rem; top: -5rem; padding: .75rem 1rem; background: var(--surface); color: var(--primary); z-index: 10; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; background: var(--bg); color: var(--text); font-size: 1.0625rem; line-height: 1.6; }
+    button, textarea { font: inherit; }
+    button { cursor: pointer; }
+    a { color: var(--primary); }
+    .skip-link { position: fixed; left: 1rem; top: -6rem; padding: .75rem 1rem; background: var(--surface); color: var(--primary); z-index: 100; border: 2px solid var(--primary); border-radius: .5rem; }
     .skip-link:focus { top: 1rem; }
-    header, main, footer { width: min(52rem, calc(100% - 2rem)); margin-inline: auto; }
-    header { padding-block: 2rem 1rem; }
-    h1 { margin: 0; font-size: clamp(1.8rem, 5vw, 2.7rem); line-height: 1.2; }
-    .lead { color: var(--muted); max-width: 45rem; }
-    .panel { background: var(--surface); border: 1px solid var(--border); border-radius: .75rem; padding: clamp(1rem, 4vw, 2rem); box-shadow: 0 3px 14px rgb(19 34 56 / 10%); }
-    label { display: block; font-weight: 700; margin-bottom: .5rem; }
-    textarea { display: block; width: 100%; min-height: 8rem; resize: vertical; padding: .8rem; border: 2px solid var(--border); border-radius: .4rem; background: var(--surface); color: var(--text); font: inherit; }
-    textarea:focus, button:focus-visible, a:focus-visible { outline: 4px solid var(--focus); outline-offset: 3px; }
-    .hint { color: var(--muted); font-size: 1rem; margin-block: .4rem 1rem; }
+    .shell { width: min(70rem, calc(100% - 2rem)); margin-inline: auto; }
+    .site-header { background: var(--surface); border-bottom: 1px solid #d4dee9; }
+    .topbar { min-height: 4.5rem; display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding-block: .7rem; }
+    .brand { display: flex; align-items: center; gap: .75rem; min-width: 0; }
+    .brand-mark { width: 2.75rem; height: 2.75rem; display: grid; place-items: center; flex: 0 0 auto; color: #fff; background: var(--primary); border-radius: .8rem; font-weight: 850; letter-spacing: -.04em; }
+    .brand-name { display: block; font-weight: 800; line-height: 1.2; }
+    .brand-subtitle { display: block; color: var(--muted); font-size: .88rem; line-height: 1.3; }
+    .local-badge { display: inline-flex; align-items: center; gap: .45rem; flex: 0 0 auto; padding: .45rem .75rem; border: 1px solid #9ac7b0; border-radius: 999px; background: #edf9f1; color: var(--success); font-weight: 750; font-size: .9rem; }
+    .local-dot { width: .65rem; height: .65rem; border-radius: 50%; background: #24804d; box-shadow: 0 0 0 .22rem rgb(36 128 77 / 14%); }
+    main { padding-bottom: 3rem; }
+    .hero { position: relative; overflow: hidden; background: linear-gradient(120deg, var(--hero-start), var(--hero-end)); color: #fff; }
+    .hero::before, .hero::after { content: ""; position: absolute; border-radius: 50%; border: 1px solid rgb(255 255 255 / 13%); pointer-events: none; }
+    .hero::before { width: 24rem; height: 24rem; right: -7rem; top: -11rem; }
+    .hero::after { width: 16rem; height: 16rem; right: 8rem; bottom: -12rem; }
+    .hero-grid { position: relative; z-index: 1; display: grid; grid-template-columns: minmax(0, 1.55fr) minmax(15rem, .7fr); gap: clamp(1.5rem, 5vw, 4rem); align-items: center; padding-block: clamp(2.5rem, 7vw, 5rem); }
+    .eyebrow { margin: 0 0 .7rem; color: #c8f3f2; font-size: .84rem; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; }
+    h1 { max-width: 44rem; margin: 0; font-size: clamp(2.15rem, 6vw, 4.3rem); line-height: 1.05; letter-spacing: -.035em; }
+    .hero-lead { max-width: 42rem; margin: 1.2rem 0 1.5rem; color: #e7f2f7; font-size: clamp(1.05rem, 2.5vw, 1.3rem); }
+    .trust-list { display: flex; flex-wrap: wrap; gap: .7rem 1.1rem; padding: 0; margin: 0; list-style: none; }
+    .trust-list li { display: flex; align-items: center; gap: .45rem; color: #f4fbff; font-size: .95rem; font-weight: 650; }
+    .check { display: grid; place-items: center; width: 1.3rem; height: 1.3rem; border-radius: 50%; color: var(--hero-start); background: #bfe9d0; font-size: .78rem; font-weight: 900; }
+    .hero-card { padding: 1.35rem; border: 1px solid rgb(255 255 255 / 24%); border-radius: 1rem; background: rgb(255 255 255 / 10%); backdrop-filter: blur(.5rem); box-shadow: 0 1rem 2rem rgb(0 0 0 / 12%); }
+    .hero-card strong { display: block; font-size: 1.05rem; }
+    .hero-card p { margin: .35rem 0 1rem; color: #e2f0f4; font-size: .93rem; }
+    .hero-stat { display: grid; grid-template-columns: auto 1fr; gap: .1rem .7rem; align-items: center; padding-block: .62rem; border-top: 1px solid rgb(255 255 255 / 16%); }
+    .hero-stat b { grid-row: span 2; font-size: 1.45rem; color: #cbf3e0; }
+    .hero-stat span { color: #e2f0f4; font-size: .85rem; }
+    .scenario-section { padding-block: 2.4rem 1rem; }
+    .section-heading { display: flex; align-items: end; justify-content: space-between; gap: 1rem; margin-bottom: 1rem; }
+    .section-heading h2, .query-panel h2 { margin: 0; font-size: clamp(1.45rem, 4vw, 2rem); line-height: 1.25; }
+    .section-heading p { max-width: 35rem; margin: .3rem 0 0; color: var(--muted); }
+    .scenario-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; }
+    .scenario-card { min-height: 10.5rem; width: 100%; display: flex; flex-direction: column; align-items: flex-start; text-align: left; padding: 1.15rem; border: 1px solid #c2cfdd; border-radius: .9rem; color: var(--text); background: var(--surface); box-shadow: 0 .25rem .8rem rgb(19 34 56 / 6%); transition: transform .15s ease, border-color .15s ease, box-shadow .15s ease; }
+    .scenario-card:hover { transform: translateY(-.18rem); border-color: var(--primary); box-shadow: 0 .7rem 1.5rem rgb(19 34 56 / 12%); }
+    .scenario-icon { width: 2.45rem; height: 2.45rem; display: grid; place-items: center; margin-bottom: .8rem; border-radius: .7rem; background: var(--accent-soft); color: #075869; font-size: 1.3rem; }
+    .scenario-card strong { display: block; font-size: 1.05rem; }
+    .scenario-card small { display: block; margin-top: .3rem; color: var(--muted); line-height: 1.45; }
+    .scenario-action { margin-top: auto; padding-top: .65rem; color: var(--primary); font-weight: 750; font-size: .9rem; }
+    .workspace { display: grid; grid-template-columns: minmax(0, 1.75fr) minmax(15rem, .65fr); gap: 1.25rem; align-items: start; padding-top: 1.3rem; }
+    .panel { background: var(--surface); border: 1px solid var(--border); border-radius: 1rem; padding: clamp(1rem, 4vw, 2rem); box-shadow: var(--shadow); }
+    .query-intro { margin: .45rem 0 1.35rem; color: var(--muted); }
+    label { display: block; font-weight: 750; margin-bottom: .5rem; }
+    .question-wrap { position: relative; }
+    textarea { display: block; width: 100%; min-height: 9rem; resize: vertical; padding: 1rem 1rem 2.25rem; border: 2px solid var(--border); border-radius: .65rem; background: var(--surface); color: var(--text); }
+    textarea::placeholder { color: #63758a; opacity: 1; }
+    .counter { position: absolute; right: .75rem; bottom: .45rem; margin: 0; color: var(--muted); font-size: .85rem; }
+    textarea:focus, button:focus-visible, a:focus-visible, summary:focus-visible { outline: 4px solid var(--focus); outline-offset: 3px; }
+    .hint { color: var(--muted); font-size: .95rem; margin-block: .5rem 1rem; }
     .actions { display: flex; flex-wrap: wrap; gap: .75rem; }
-    button { min-height: 3rem; min-width: 3rem; border: 2px solid var(--primary); border-radius: .4rem; padding: .65rem 1.1rem; font: inherit; font-weight: 700; cursor: pointer; }
-    button[type="submit"] { background: var(--primary); color: #fff; }
-    button[type="submit"]:hover { background: var(--primary-hover); }
-    button[type="button"] { background: var(--surface); color: var(--primary); }
+    .action-button { min-height: 3rem; min-width: 3rem; border: 2px solid var(--primary); border-radius: .55rem; padding: .65rem 1.1rem; font-weight: 750; }
+    .primary-button { background: var(--primary); color: #fff; }
+    .primary-button:hover { background: var(--primary-hover); }
+    .secondary-button { background: var(--surface); color: var(--primary); }
     button:disabled { cursor: wait; opacity: .65; }
     #status { min-height: 1.8rem; margin-block: 1rem 0; font-weight: 650; }
-    #status.error { color: var(--danger); }
-    #result { margin-top: 1.25rem; }
+    #status.error, .error { color: var(--danger); }
+    #result { margin-top: 1.2rem; padding-top: 1.3rem; border-top: 1px solid #d4dee9; }
     #result[hidden] { display: none; }
-    .answer { white-space: pre-wrap; }
-    .sources { padding-left: 1.35rem; }
-    .source { margin-bottom: .7rem; }
-    .source-meta { display: block; color: var(--muted); font-size: .95rem; }
-    footer { padding-block: 1.5rem 2.5rem; color: var(--muted); font-size: .95rem; }
-    @media (prefers-reduced-motion: reduce) { *, *::before, *::after { scroll-behavior: auto !important; } }
-    @media (forced-colors: active) { .panel, textarea, button { border: 2px solid CanvasText; } }
+    .result-heading-row { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: .8rem; }
+    .result-heading-row h2 { margin: 0; }
+    .copy-button { min-height: 2.75rem; border: 1px solid var(--primary); border-radius: .5rem; padding: .5rem .8rem; color: var(--primary); background: var(--surface); font-weight: 700; }
+    .answer-box { margin-top: 1rem; padding: 1rem 1.1rem; border-left: .35rem solid var(--accent); border-radius: 0 .65rem .65rem 0; background: var(--surface-soft); }
+    .answer { margin: 0; white-space: pre-wrap; }
+    .source-region { margin-top: 1.25rem; }
+    .source-region h3 { margin-bottom: .55rem; }
+    .sources { display: grid; gap: .65rem; padding: 0; margin: 0; list-style: none; }
+    .source { padding: .8rem .9rem; border: 1px solid #cad6e2; border-radius: .6rem; background: #fff; }
+    .source strong { display: block; }
+    .source-meta { display: block; color: var(--muted); font-size: .9rem; }
+    .guide-panel { box-shadow: none; }
+    .guide-panel h2 { margin-top: 0; font-size: 1.25rem; }
+    .steps { padding: 0; margin: 1rem 0 1.4rem; list-style: none; counter-reset: steps; }
+    .steps li { position: relative; min-height: 2.6rem; padding: 0 0 1rem 3rem; counter-increment: steps; }
+    .steps li::before { content: counter(steps); position: absolute; left: 0; top: -.05rem; width: 2rem; height: 2rem; display: grid; place-items: center; border-radius: .6rem; color: #fff; background: var(--accent); font-weight: 800; }
+    .steps strong { display: block; }
+    .steps span { display: block; color: var(--muted); font-size: .9rem; }
+    details { border-top: 1px solid #d4dee9; padding-top: 1rem; }
+    summary { min-height: 2.75rem; display: flex; align-items: center; cursor: pointer; color: var(--primary); font-weight: 750; }
+    .scope-list { padding-left: 1.2rem; color: var(--muted); }
+    .privacy-note { margin-top: 1rem; padding: .8rem; border-radius: .6rem; background: #edf9f1; color: #164d30; font-size: .9rem; }
+    footer { background: #102a43; color: #dbe8f2; }
+    .footer-content { display: flex; flex-wrap: wrap; justify-content: space-between; gap: .75rem 2rem; padding-block: 1.5rem; font-size: .9rem; }
+    .footer-content p { margin: 0; }
+    @media (max-width: 52rem) {
+      .hero-grid, .workspace { grid-template-columns: 1fr; }
+      .hero-card { max-width: 34rem; }
+      .scenario-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    }
+    @media (max-width: 35rem) {
+      .brand-subtitle { display: none; }
+      .local-badge { padding-inline: .55rem; }
+      .local-label-long { display: none; }
+      .hero-grid { padding-block: 2.4rem; }
+      .hero-card { display: none; }
+      .scenario-grid { grid-template-columns: 1fr; }
+      .scenario-card { min-height: auto; }
+      .section-heading { display: block; }
+      .panel { border-radius: .8rem; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { transition: none !important; }
+    }
+    @media (forced-colors: active) {
+      .panel, textarea, .action-button, .scenario-card, .source, .copy-button { border: 2px solid CanvasText; }
+      .local-dot, .check, .scenario-icon, .steps li::before { forced-color-adjust: none; }
+    }
   </style>
 </head>
 <body>
   <a class="skip-link" href="#main-content">Ana içeriğe geç</a>
-  <header>
-    <h1>{{ product_name }}</h1>
-    <p class="lead">Engelli hakları ve kamu hizmetleri hakkında, cihazdaki resmî kaynaklara dayalı bilgi alın.</p>
+  <header class="site-header">
+    <div class="shell topbar">
+      <div class="brand">
+        <span class="brand-mark" aria-hidden="true">EY</span>
+        <span>
+          <span class="brand-name">{{ product_name }}</span>
+          <span class="brand-subtitle">Resmî kaynaklarla çalışan yerel bilgi asistanı</span>
+        </span>
+      </div>
+      <span class="local-badge"><span class="local-dot" aria-hidden="true"></span><span class="local-label-long">Çevrimdışı ve </span>yerel</span>
+    </div>
   </header>
+
   <main id="main-content" tabindex="-1">
-    <section class="panel" aria-labelledby="question-heading">
-      <h2 id="question-heading">Sorunuzu yazın</h2>
-      <form id="ask-form" aria-busy="false">
-        <label for="question">Soru</label>
-        <textarea id="question" name="question" required maxlength="{{ max_question_chars }}" aria-describedby="question-hint"></textarea>
-        <p class="hint" id="question-hint">Kişisel kimlik, sağlık veya iletişim bilgilerinizi yazmayın. En fazla {{ max_question_chars }} karakter.</p>
-        <div class="actions">
-          <button id="submit" type="submit">Yanıtı getir</button>
-          <button id="clear" type="button">Temizle</button>
+    <section class="hero" aria-labelledby="hero-heading">
+      <div class="shell hero-grid">
+        <div>
+          <p class="eyebrow">Haklar ve kamu hizmetleri için sade rehber</p>
+          <h1 id="hero-heading">Doğru bilgiye, daha kısa yoldan.</h1>
+          <p class="hero-lead">Engelli hakları, başvurular ve kamu hizmetleri hakkında sorunuzu yazın. EYBA yalnız cihazınızdaki resmî kaynaklara dayanarak yanıtlasın.</p>
+          <ul class="trust-list" aria-label="Temel özellikler">
+            <li><span class="check" aria-hidden="true">✓</span> İnternet gerektirmez</li>
+            <li><span class="check" aria-hidden="true">✓</span> Resmî kaynak gösterir</li>
+            <li><span class="check" aria-hidden="true">✓</span> Soru kaydetmez</li>
+          </ul>
         </div>
-      </form>
-      <noscript><p class="error">Bu arayüzün çalışması için tarayıcınızda JavaScript açık olmalıdır.</p></noscript>
-      <p id="status" role="status" aria-live="polite"></p>
-      <section id="result" hidden aria-labelledby="answer-heading">
-        <h2 id="answer-heading" tabindex="-1">Yanıt</h2>
-        <p class="answer" id="answer"></p>
-        <div id="source-region">
-          <h3>Kaynaklar</h3>
-          <ul class="sources" id="sources"></ul>
+        <aside class="hero-card" aria-label="Bilgi tabanı özeti">
+          <strong>Hazır bilgi tabanı</strong>
+          <p>Ulusal haklar ve Şanlıurfa yerel hizmetleri tek yerde.</p>
+          <div class="hero-stat"><b>15</b><strong>Resmî kaynak</strong><span>Doğrulanmış kurum içerikleri</span></div>
+          <div class="hero-stat"><b>47</b><strong>Bilgi bölümü</strong><span>Kaynak gösteren yerel arama</span></div>
+          <div class="hero-stat"><b>0</b><strong>Dış ağ isteği</strong><span>Yanıt üretimi cihazınızda</span></div>
+        </aside>
+      </div>
+    </section>
+
+    <div class="shell">
+      <section class="scenario-section" aria-labelledby="scenario-heading">
+        <div class="section-heading">
+          <div>
+            <h2 id="scenario-heading">Bir senaryoyla başlayın</h2>
+            <p>Size en yakın konuyu seçin. Örnek soru aşağıdaki alana hazırlanır; göndermeden önce düzenleyebilirsiniz.</p>
+          </div>
+        </div>
+        <div class="scenario-grid">
+          <button class="scenario-card" type="button" data-question="Afet çantasında hangi malzemeler bulunmalı?">
+            <span class="scenario-icon" aria-hidden="true">⌂</span><strong>Afete hazırlanıyorum</strong><small>Afet çantası ve deprem sırasında yapılacaklar.</small><span class="scenario-action">Örnek soruyu hazırla →</span>
+          </button>
+          <button class="scenario-card" type="button" data-question="İŞKUR'a engelli olarak kayıt olmak için rapor oranı kaç olmalı?">
+            <span class="scenario-icon" aria-hidden="true">▣</span><strong>İş arıyorum</strong><small>İŞKUR kaydı, engelli kotası ve istihdam hakları.</small><span class="scenario-action">Örnek soruyu hazırla →</span>
+          </button>
+          <button class="scenario-card" type="button" data-question="Engelli sağlık kurulu raporu vermeye yetkili hastane listesine nereden ulaşılır?">
+            <span class="scenario-icon" aria-hidden="true">✚</span><strong>Sağlık raporu alacağım</strong><small>Yetkili hastaneler ve erişkin engellilik değerlendirmesi.</small><span class="scenario-action">Örnek soruyu hazırla →</span>
+          </button>
+          <button class="scenario-card" type="button" data-question="Engellilere şehirlerarası otobüslerde indirim var mı?">
+            <span class="scenario-icon" aria-hidden="true">↔</span><strong>Ulaşım hakkımı öğreniyorum</strong><small>İndirimler, muafiyetler ve erişilebilir ulaşım.</small><span class="scenario-action">Örnek soruyu hazırla →</span>
+          </button>
+          <button class="scenario-card" type="button" data-question="EKPSS başvuru ve sınav duyurularını hangi kurum yayımlar?">
+            <span class="scenario-icon" aria-hidden="true">✓</span><strong>EKPSS'ye hazırlanıyorum</strong><small>Başvuru ve sınav duyuruları için doğru kurum.</small><span class="scenario-action">Örnek soruyu hazırla →</span>
+          </button>
+          <button class="scenario-card" type="button" data-question="Şanlıurfa Engelliler Koordinasyon ve Yaşam Merkezi hangi hizmetleri sunuyor?">
+            <span class="scenario-icon" aria-hidden="true">◎</span><strong>Şanlıurfa'da destek arıyorum</strong><small>Yerel merkezler, hizmet başlıkları ve iletişim kanalları.</small><span class="scenario-action">Örnek soruyu hazırla →</span>
+          </button>
         </div>
       </section>
-    </section>
+
+      <div class="workspace">
+        <section class="panel query-panel" aria-labelledby="question-heading">
+          <h2 id="question-heading">Sorunuzu sorun</h2>
+          <p class="query-intro">Kısa ve tek konulu bir soru, daha net bir yanıt bulmamıza yardımcı olur.</p>
+          <form id="ask-form" aria-busy="false">
+            <label for="question">Soru</label>
+            <div class="question-wrap">
+              <textarea id="question" name="question" required maxlength="{{ max_question_chars }}" aria-describedby="question-hint question-count" placeholder="Örnek: Engelli kimlik kartına nasıl başvurabilirim?"></textarea>
+              <p class="counter" id="question-count"><span id="character-count">0</span>/{{ max_question_chars }}</p>
+            </div>
+            <p class="hint" id="question-hint">Kişisel kimlik, sağlık veya iletişim bilgilerinizi yazmayın.</p>
+            <div class="actions">
+              <button class="action-button primary-button" id="submit" type="submit">Yanıtı getir</button>
+              <button class="action-button secondary-button" id="clear" type="button">Temizle</button>
+            </div>
+          </form>
+          <noscript><p class="error">Bu arayüzün çalışması için tarayıcınızda JavaScript açık olmalıdır.</p></noscript>
+          <p id="status" role="status" aria-live="polite"></p>
+          <section id="result" hidden aria-labelledby="answer-heading">
+            <div class="result-heading-row">
+              <h2 id="answer-heading" tabindex="-1">Yanıt</h2>
+              <button class="copy-button" id="copy-answer" type="button">Yanıtı kopyala</button>
+            </div>
+            <div class="answer-box"><p class="answer" id="answer"></p></div>
+            <div class="source-region" id="source-region">
+              <h3>Dayanılan resmî kaynaklar</h3>
+              <ul class="sources" id="sources"></ul>
+            </div>
+          </section>
+        </section>
+
+        <aside class="panel guide-panel" aria-labelledby="guide-heading">
+          <h2 id="guide-heading">Nasıl çalışır?</h2>
+          <ol class="steps">
+            <li><strong>Senaryoyu seçin</strong><span>Ya da kendi sorunuzu yazın.</span></li>
+            <li><strong>Yerel bilgi taransın</strong><span>Arama yalnız cihazınızdaki kaynaklarda yapılır.</span></li>
+            <li><strong>Kaynağıyla okuyun</strong><span>Yanıtın dayandığı resmî kurumları görün.</span></li>
+          </ol>
+          <details>
+            <summary>Hangi konuları sorabilirim?</summary>
+            <ul class="scope-list">
+              <li>Engelli kimlik kartı ve temel haklar</li><li>İŞKUR, istihdam ve EKPSS</li><li>Sağlık kurulu raporları</li><li>Ulaşımda erişilebilirlik</li><li>Afet hazırlığı</li><li>Şanlıurfa yerel hizmetleri</li>
+            </ul>
+          </details>
+          <p class="privacy-note"><strong>Gizlilik:</strong> Sorularınız ve yanıtlarınız diske kaydedilmez.</p>
+        </aside>
+      </div>
+    </div>
   </main>
-  <footer>Uygulama sürümü: {{ app_version }}. Bilgi tabanı sürümü: {{ knowledge_version }}. Uygulama çalışma sırasında dış ağa bağlanmaz.</footer>
+
+  <footer>
+    <div class="shell footer-content">
+      <p>Uygulama sürümü: {{ app_version }} · Bilgi tabanı: {{ knowledge_version }}</p>
+      <p>Çalışma sırasında dış ağa bağlanmaz.</p>
+    </div>
+  </footer>
+
   <script>
     const form = document.querySelector('#ask-form');
     const question = document.querySelector('#question');
@@ -92,7 +278,11 @@
     const answer = document.querySelector('#answer');
     const sources = document.querySelector('#sources');
     const sourceRegion = document.querySelector('#source-region');
+    const characterCount = document.querySelector('#character-count');
+    const copyAnswer = document.querySelector('#copy-answer');
+    const scenarioButtons = [...document.querySelectorAll('.scenario-card')];
 
+    function updateCount() { characterCount.textContent = question.value.length; }
     function resetResult() {
       result.hidden = true;
       answer.textContent = '';
@@ -100,25 +290,48 @@
       status.textContent = '';
       status.classList.remove('error');
     }
+    function setBusy(isBusy) {
+      submit.disabled = isBusy;
+      clear.disabled = isBusy;
+      scenarioButtons.forEach((button) => { button.disabled = isBusy; });
+      form.setAttribute('aria-busy', String(isBusy));
+    }
 
+    question.addEventListener('input', updateCount);
+    scenarioButtons.forEach((button) => {
+      button.addEventListener('click', () => {
+        resetResult();
+        question.value = button.dataset.question;
+        updateCount();
+        status.textContent = 'Senaryo sorusu hazır. İsterseniz düzenleyip yanıtı getirin.';
+        question.focus();
+        question.setSelectionRange(question.value.length, question.value.length);
+        document.querySelector('.query-panel').scrollIntoView({ block: 'start' });
+      });
+    });
     clear.addEventListener('click', () => {
       form.reset();
       resetResult();
+      updateCount();
       question.focus();
     });
-
+    copyAnswer.addEventListener('click', async () => {
+      try {
+        await navigator.clipboard.writeText(answer.textContent);
+        status.textContent = 'Yanıt panoya kopyalandı.';
+      } catch (_error) {
+        status.textContent = 'Yanıt kopyalanamadı. Metni seçerek kopyalayabilirsiniz.';
+        status.classList.add('error');
+      }
+    });
     form.addEventListener('submit', async (event) => {
       event.preventDefault();
       resetResult();
-      submit.disabled = true;
-      clear.disabled = true;
-      form.setAttribute('aria-busy', 'true');
+      setBusy(true);
       status.textContent = 'Yerel kaynaklarda aranıyor. Lütfen bekleyin.';
       try {
         const response = await fetch('/api/ask', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ question: question.value })
+          method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ question: question.value })
         });
         const data = await response.json();
         if (!response.ok) throw new Error(data.detail || 'Yanıt alınamadı.');
@@ -142,9 +355,7 @@
         status.textContent = `Hata: ${error.message}`;
         status.classList.add('error');
       } finally {
-        submit.disabled = false;
-        clear.disabled = false;
-        form.setAttribute('aria-busy', 'false');
+        setBusy(false);
       }
     });
   </script>
