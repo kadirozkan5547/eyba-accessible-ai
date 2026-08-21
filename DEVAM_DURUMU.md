@@ -22,11 +22,13 @@ Planla çelişirse ana proje planı ve ardından `PROJECT_SPEC.md` geçerlidir.
 - [x] FastAPI JSON API ve erişilebilir Türkçe web arayüzü
 - [x] README ve tek komutluk Windows başlatıcısı
 - [x] `app/` dış ağ importu ve haricî web varlığı için statik offline denetimi
-- [x] 24 testlik otomatik kalite paketi ve WCAG kontrast/hedef boyutu kontrolleri
+- [x] 34 testlik otomatik kalite paketi ve WCAG kontrast/hedef boyutu kontrolleri
 - [x] Gerçek tarayıcıda 320 CSS px yeniden akış ve RAG yanıt/kaynak akışı
 - [x] Ağ kısıtlı ortamda 10/10 gerçek yerel model kabul turu
 - [x] `1.0.0` sürümü, kaynak ZIP paketi, SHA-256 ve demo senaryosu
 - [x] `1.1.0` senaryo tabanlı arayüz, karakter sayacı ve yanıt kopyalama akışı
+- [x] `1.1.1` kaynak kanıt kapısı, halüsinasyon engeli ve doğrulanmış sayı/oran yedeği
+- [x] Qwen3-1.7B kalite deneyi; tekrar ve zaman aşımı nedeniyle üretim için reddedildi
 
 ## Sıradaki işler
 

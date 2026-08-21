@@ -20,7 +20,7 @@ class WebTests(unittest.TestCase):
         self.assertIn('href="#main-content"', response.text)
         self.assertIn('label for="question"', response.text)
         self.assertIn('aria-busy="false"', response.text)
-        self.assertIn("Uygulama sürümü: 1.1.0", response.text)
+        self.assertIn("Uygulama sürümü: 1.1.1", response.text)
         self.assertEqual(response.text.count('class="scenario-card"'), 6)
         self.assertIn('id="character-count"', response.text)
         self.assertIn('id="copy-answer"', response.text)
@@ -31,7 +31,7 @@ class WebTests(unittest.TestCase):
         self.assertEqual(response.status_code, 200)
         payload = response.json()
         self.assertEqual(payload["status"], "ready")
-        self.assertEqual(payload["app_version"], "1.1.0")
+        self.assertEqual(payload["app_version"], "1.1.1")
         self.assertEqual(payload["knowledge_version"], "2026-08-20")
 
     @patch("app.main.answer_question")

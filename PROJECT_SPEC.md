@@ -54,6 +54,13 @@ erişilebilirlik) ve §74 (yanıt dil standardı) ile bağdaşmıyor. Aynı cont
 `qwen2.5-1.5b` akıcı ve doğru Türkçe üretti (13.7 s / 11.3 s). Temel RAG mantığı
 değiştirilmedi; yalnız model alias'ı değişti.
 
+**2026-08-21 kalite deneyi.** Foundry Local kataloğundaki `qwen3-1.7b` modeli
+aynı resmî bağlamlarla denendi. Düşünme açıkken kullanıcıya iç düşünce metni
+yansıttı; `/no_think` ile oran bilgisini bulsa da tekrar ve yazım kusurları üretti,
+ardından zaman aşımına uğradı. Bu nedenle üretim modeli değiştirilmedi. Model
+boyutundan bağımsız ana konu kanıtı, zorunlu olgu kontrolü ve doğrulanmış kaynak
+yedeği uygulanmıştır.
+
 Donanım: RTX 5050 Laptop, 4 GB VRAM — 7B+ modeller kapsam dışı.
 Chat modeli değiştirilirse plan §11.2 uyarınca README'de açıkça belirtilir ve temel RAG
 mantığı değiştirilmez.
