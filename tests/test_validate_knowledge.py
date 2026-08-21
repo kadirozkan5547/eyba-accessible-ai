@@ -21,7 +21,8 @@ class KnowledgeValidationTests(unittest.TestCase):
             check=False,
         )
 
-        self.assertEqual(result.returncode, 0, result.stderr.decode("utf-8"))
+        diagnostics = (result.stdout + result.stderr).decode("utf-8", errors="replace")
+        self.assertEqual(result.returncode, 0, diagnostics)
         self.assertIn(
             "Bilgi tabanı kalite kapısı: PASS",
             result.stdout.decode("utf-8"),
