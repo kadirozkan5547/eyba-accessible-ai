@@ -20,6 +20,14 @@ DIRECTORY_MIN_BODY_CHARS = 100
 DIRECTORY_SOURCES = {"sanliurfa_engelsiz_yasam"}
 
 
+def configure_console_output() -> None:
+    """Keep Turkish diagnostics printable on legacy Windows code pages."""
+    for stream in (sys.stdout, sys.stderr):
+        reconfigure = getattr(stream, "reconfigure", None)
+        if reconfigure is not None:
+            reconfigure(encoding="utf-8", errors="backslashreplace")
+
+
 def normalized_path(source: Source) -> Path:
     scope = "sanliurfa" if source.city else "national"
     return settings.normalized_dir / scope / f"{source.id}.md"
@@ -98,6 +106,7 @@ def validate() -> list[str]:
 
 
 def main() -> int:
+    configure_console_output()
     errors = validate()
     if errors:
         print("Bilgi tabanı kalite kapısı: FAIL")
